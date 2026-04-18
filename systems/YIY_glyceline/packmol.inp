@@ -1,0 +1,28 @@
+tolerance 2.0
+filetype pdb
+output /root/des-peptide-study/systems/YIY_glyceline/YIY_glyceline_packed.pdb
+
+structure /root/des-peptide-study/structures/YIY_capped_full.pdb
+  number 1
+  fixed 15.0 15.0 15.0 0. 0. 0.
+end structure
+
+structure /root/des-peptide-study/parameters/water.pdb
+  number 751
+  inside box 2.0 2.0 2.0 28.0 28.0 28.0
+end structure
+
+structure /root/des-peptide-study/parameters/choline/choline.pdb
+  number 10
+  inside box 2.0 2.0 2.0 28.0 28.0 28.0
+end structure
+
+structure /root/des-peptide-study/parameters/chloride/chloride.pdb
+  number 10
+  inside box 2.0 2.0 2.0 28.0 28.0 28.0
+end structure
+
+structure /root/des-peptide-study/parameters/glycerol/glycerol.pdb
+  number 20
+  inside box 2.0 2.0 2.0 28.0 28.0 28.0
+end structure

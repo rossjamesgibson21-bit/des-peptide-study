@@ -1,0 +1,13 @@
+tolerance 2.0
+filetype pdb
+output /root/des-peptide-study/systems/GGE_water/GGE_water_packed.pdb
+
+structure /root/des-peptide-study/structures/GGE_capped_full.pdb
+  number 1
+  fixed 15.0 15.0 15.0 0. 0. 0.
+end structure
+
+structure /root/des-peptide-study/parameters/water.pdb
+  number 899
+  inside box 2.0 2.0 2.0 28.0 28.0 28.0
+end structure

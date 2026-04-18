@@ -1,0 +1,6 @@
+source leaprc.gaff2
+loadamberparams /root/des-peptide-study/parameters/glycerol/glycerol.frcmod
+mol = loadmol2 /root/des-peptide-study/parameters/glycerol/glycerol.mol2
+check mol
+saveamberparm mol /root/des-peptide-study/parameters/glycerol/glycerol.prmtop /root/des-peptide-study/parameters/glycerol/glycerol.inpcrd
+quit

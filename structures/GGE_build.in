@@ -1,0 +1,8 @@
+source leaprc.protein.ff14SB
+source leaprc.water.tip3p
+
+peptide = sequence { ACE GLU GLU GLU GLY GLY GLU ILE VAL PHE NME }
+check peptide
+savepdb peptide /root/des-peptide-study/structures/GGE_capped_full.pdb
+saveamberparm peptide /root/des-peptide-study/structures/GGE_peptide.prmtop /root/des-peptide-study/structures/GGE_peptide.inpcrd
+quit

@@ -1,0 +1,14 @@
+remark goes here
+MASS
+cl 35.450        0.000
+
+BOND
+
+ANGLE
+
+DIHE
+
+IMPROPER
+
+NONBON
+  cl          2.5130  0.0356

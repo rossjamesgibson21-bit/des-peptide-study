@@ -1,0 +1,21 @@
+source leaprc.protein.ff14SB
+source leaprc.water.tip3p
+source leaprc.gaff2
+
+# Load DES component parameters
+loadamberparams /root/des-peptide-study/parameters/choline/choline.frcmod
+CHO = loadmol2 /root/des-peptide-study/parameters/choline/choline_scaled.mol2
+loadamberparams /root/des-peptide-study/parameters/chloride/chloride.frcmod
+CLA = loadmol2 /root/des-peptide-study/parameters/chloride/chloride_scaled.mol2
+loadamberparams /root/des-peptide-study/parameters/urea/urea.frcmod
+URE = loadmol2 /root/des-peptide-study/parameters/urea/urea.mol2
+
+system = loadpdb /root/des-peptide-study/systems/CME_reline/CME_reline_packed.pdb
+
+set system box { 30.0 30.0 30.0 }
+
+check system
+saveamberparm system /root/des-peptide-study/systems/CME_reline/CME_reline.prmtop /root/des-peptide-study/systems/CME_reline/CME_reline.inpcrd
+savepdb system /root/des-peptide-study/systems/CME_reline/CME_reline_tleap.pdb
+
+quit

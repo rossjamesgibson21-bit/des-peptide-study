@@ -1,0 +1,12 @@
+@<TRIPOS>MOLECULE
+CLA
+    1     0     1     0     0
+SMALL
+USER_CHARGES
+
+
+@<TRIPOS>ATOM
+      1 Cl           0.0000    0.0000    0.0000 cl         1 CLA      -0.800000
+@<TRIPOS>BOND
+@<TRIPOS>SUBSTRUCTURE
+     1 CLA         1 TEMP              0 ****  ****    0 ROOT

@@ -1,0 +1,18 @@
+source leaprc.protein.ff14SB
+source leaprc.water.tip3p
+source leaprc.gaff2
+
+# Load Packmol-packed system
+system = loadpdb /root/des-peptide-study/systems/YIY_water/YIY_water_packed.pdb
+
+# Set periodic box (3.0 nm = 30 Å)
+set system box { 30.0 30.0 30.0 }
+
+# Check for issues
+check system
+
+# Save topology and coordinates
+saveamberparm system /root/des-peptide-study/systems/YIY_water/YIY_water.prmtop /root/des-peptide-study/systems/YIY_water/YIY_water.inpcrd
+savepdb system /root/des-peptide-study/systems/YIY_water/YIY_water_tleap.pdb
+
+quit

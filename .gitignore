@@ -1,0 +1,26 @@
+# Checkpoints (large binary, not needed for analysis)
+*.chk
+
+# Trajectories (large, store separately)
+*.dcd
+
+# Packed PDBs (reproducible from Packmol scripts)
+*_packed.pdb
+
+# macOS
+.DS_Store
+._*
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# acpype intermediates
+*.acpype/
+
+# tleap log
+leap.log
+
+# Test files
+*_test.*

@@ -1,0 +1,8 @@
+source leaprc.protein.ff14SB
+source leaprc.water.tip3p
+
+peptide = sequence { ACE ASN PRO TYR ILE TYR LYS NME }
+check peptide
+savepdb peptide /root/des-peptide-study/structures/YIY_capped_full.pdb
+saveamberparm peptide /root/des-peptide-study/structures/YIY_peptide.prmtop /root/des-peptide-study/structures/YIY_peptide.inpcrd
+quit

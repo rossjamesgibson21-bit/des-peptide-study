@@ -1,0 +1,8 @@
+source leaprc.protein.ff14SB
+source leaprc.water.tip3p
+
+peptide = sequence { ACE LEU TYR GLN CYS MET GLU PHE VAL ARG NME }
+check peptide
+savepdb peptide /root/des-peptide-study/structures/CME_capped_full.pdb
+saveamberparm peptide /root/des-peptide-study/structures/CME_peptide.prmtop /root/des-peptide-study/structures/CME_peptide.inpcrd
+quit

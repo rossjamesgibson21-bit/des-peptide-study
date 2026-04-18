@@ -1,0 +1,4 @@
+source leaprc.water.tip3p
+mol = loadpdb /root/des-peptide-study/parameters/water.pdb
+saveamberparm mol /root/des-peptide-study/parameters/water.prmtop /root/des-peptide-study/parameters/water.inpcrd
+quit
