@@ -1,0 +1,7 @@
+peptide,solvent,comparison,SASA_water,SASA_DES,dSASA,dSASA_CI95_lo,dSASA_CI95_hi,dSASA_pct,SASA_effect_size,WaterCoord_water,WaterCoord_DES,dWaterCoord,dWaterCoord_CI95_lo,dWaterCoord_CI95_hi,dWaterCoord_pct,WaterCoord_effect_size,Hbond_events_water,Hbond_events_DES,dHbond_events,dHbond_events_pct,Hbond_median_water_ps,Hbond_median_DES_ps,dHbond_median_ps,CHO_coord,CLA_coord,URE_coord,GOL_coord
+GGE,reline,reline vs water,0.45046,0.92022,0.46976,0.45174,0.48778,104.3,36.87,7.158,5.6807,-1.4773,-1.5232,-1.4314,-20.6,45.49,2260.0,1168.0,-1092.0,-48.3,3.0,2.0,-1.0,0.0264,0.0,0.3437,
+GGE,glyceline,glyceline vs water,0.45046,0.89446,0.444,0.42346,0.46454,98.6,30.57,7.158,5.4561,-1.7019,-1.7446,-1.6592,-23.8,56.35,2260.0,1682.0,-578.0,-25.6,3.0,2.0,-1.0,0.0264,0.0006,,0.0861
+CME,reline,reline vs water,0.43416,1.24645,0.81229,0.78948,0.8351,187.1,50.35,5.8858,4.7242,-1.1616,-1.204,-1.1192,-19.7,38.78,2432.0,711.0,-1721.0,-70.8,2.0,2.0,0.0,0.0047,0.0007,0.3771,
+CME,glyceline,glyceline vs water,0.43416,1.49193,1.05777,1.03011,1.08543,243.6,54.07,5.8858,5.113,-0.7728,-0.818,-0.7276,-13.1,24.18,2432.0,1356.0,-1076.0,-44.2,2.0,2.0,0.0,0.0149,0.0001,,0.0828
+YIY,reline,reline vs water,0.59346,1.30424,0.71078,0.68429,0.73727,119.8,37.94,5.475,4.3632,-1.1118,-1.1514,-1.0722,-20.3,39.72,0.0,1433.0,1433.0,,,2.0,,0.0189,0.0,0.3191,
+YIY,glyceline,glyceline vs water,0.59346,1.96327,1.36981,1.33702,1.4026,230.8,59.07,5.475,4.7004,-0.7746,-0.8107,-0.7385,-14.1,30.37,0.0,0.0,0.0,,,,,0.0072,0.0003,,0.1303
