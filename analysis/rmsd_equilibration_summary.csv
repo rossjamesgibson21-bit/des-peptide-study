@@ -1,0 +1,10 @@
+system,peptide,solvent,n_frames_total,equil_ns,plateau_rmsd_nm,analysis_start_ns,analysis_n_frames
+GGE_water,GGE,water,10000,0.0,0.3139,1.0,9000
+GGE_reline,GGE,reline,10000,0.0,0.2369,1.0,9000
+GGE_glyceline,GGE,glyceline,10000,0.0,0.6299,1.0,9000
+CME_water,CME,water,10000,0.0,0.3003,1.0,9000
+CME_reline,CME,reline,10000,0.0,0.2881,1.0,9000
+CME_glyceline,CME,glyceline,10000,0.0,0.3248,1.0,9000
+YIY_water,YIY,water,10000,0.0,0.1328,1.0,9000
+YIY_reline,YIY,reline,10000,0.0,0.2584,1.0,9000
+YIY_glyceline,YIY,glyceline,10000,0.0,0.1875,1.0,9000
