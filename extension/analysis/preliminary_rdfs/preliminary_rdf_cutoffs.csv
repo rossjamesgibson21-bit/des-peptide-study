@@ -1,0 +1,31 @@
+system,peptide,solvent,partner,n_partner_atoms,n_pairs,first_min_nm,first_min_g,default_cutoff_nm,delta_from_default_A
+GGE_water,GGE,water,Water O,899,2697,0.3325,0.3840614854974579,0.35,-0.17499989271163918
+GGE_reline,GGE,reline,Water O,744,2232,0.3325,0.36635204399765525,0.35,-0.17499989271163918
+GGE_reline,GGE,reline,Choline N,13,39,0.3875,3.0856670534542543,0.35,0.37499988079071067
+GGE_reline,GGE,reline,Chloride,13,39,nan,nan,0.35,nan
+GGE_reline,GGE,reline,Urea N,52,156,0.35750002,0.6785477512193423,0.35,0.0750001668930056
+GGE_reline,GGE,reline,Urea O,26,78,0.5375,0.8379331342193699,0.35,1.8750002384185793
+GGE_glyceline,GGE,glyceline,Water O,751,2253,0.3325,0.3288410645407834,0.35,-0.17499989271163918
+GGE_glyceline,GGE,glyceline,Choline N,10,30,0.4025,2.9775176143137077,0.35,0.5250000357627871
+GGE_glyceline,GGE,glyceline,Chloride,10,30,nan,nan,0.35,nan
+GGE_glyceline,GGE,glyceline,Glycerol O,60,180,nan,nan,0.35,nan
+CME_water,CME,water,Water O,899,2697,0.3325,0.2844816176121571,0.35,-0.17499989271163918
+CME_reline,CME,reline,Water O,744,2232,0.3325,0.2837732414877737,0.35,-0.17499989271163918
+CME_reline,CME,reline,Choline N,13,39,nan,nan,0.35,nan
+CME_reline,CME,reline,Chloride,13,39,nan,nan,0.35,nan
+CME_reline,CME,reline,Urea N,52,156,0.39249998,0.5068827423097952,0.35,0.42499983310699485
+CME_reline,CME,reline,Urea O,26,78,0.5375,0.7690199508193744,0.35,1.8750002384185793
+CME_glyceline,CME,glyceline,Water O,751,2253,0.3375,0.3099582433455904,0.35,-0.124999940395355
+CME_glyceline,CME,glyceline,Choline N,10,30,0.39249998,2.4992073037028595,0.35,0.42499983310699485
+CME_glyceline,CME,glyceline,Chloride,10,30,nan,nan,0.35,nan
+CME_glyceline,CME,glyceline,Glycerol O,60,180,nan,nan,0.35,nan
+YIY_water,YIY,water,Water O,899,2697,0.3375,0.22790183317100018,0.35,-0.124999940395355
+YIY_reline,YIY,reline,Water O,744,2232,0.3375,0.21963789920130883,0.35,-0.124999940395355
+YIY_reline,YIY,reline,Choline N,13,39,0.39249998,1.4358577714759235,0.35,0.42499983310699485
+YIY_reline,YIY,reline,Chloride,13,39,nan,nan,0.35,nan
+YIY_reline,YIY,reline,Urea N,52,156,0.4125,0.4337526804592877,0.35,0.6249999403953554
+YIY_reline,YIY,reline,Urea O,26,78,0.5425,0.7079944564931047,0.35,1.9250001907348635
+YIY_glyceline,YIY,glyceline,Water O,751,2253,0.3425,0.21310124554396565,0.35,-0.07499998807907082
+YIY_glyceline,YIY,glyceline,Choline N,10,30,nan,nan,0.35,nan
+YIY_glyceline,YIY,glyceline,Chloride,10,30,nan,nan,0.35,nan
+YIY_glyceline,YIY,glyceline,Glycerol O,60,180,nan,nan,0.35,nan
