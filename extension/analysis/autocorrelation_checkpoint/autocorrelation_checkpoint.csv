@@ -1,6 +1,10 @@
 system,replica,observable,tau_int_ns,N_eff,CI_inflation,T_over_tau,reliable,n_analysed_frames,mean
+CME_glyceline,1,SASA,5.297,17.0,23.0,17.0,False,9000,3.7705
+CME_glyceline,1,Rg,4.163,21.6,20.4,21.6,False,9000,0.6998
 CME_water,1,SASA,1.515,59.4,12.3,59.4,True,9000,3.8815
 CME_water,1,Rg,7.051,12.8,26.6,12.8,False,9000,0.7919
+GGE_glyceline,1,SASA,9.99,9.0,31.6,9.0,False,9000,2.6853
+GGE_glyceline,1,Rg,3.467,26.0,18.6,26.0,False,9000,0.7165
 GGE_water,1,SASA,4.511,20.0,21.2,20.0,False,9000,2.5131
 GGE_water,1,Rg,4.243,21.2,20.6,21.2,False,9000,0.6942
 YIY_water,1,SASA,2.845,31.6,16.9,31.6,False,9000,5.3358
