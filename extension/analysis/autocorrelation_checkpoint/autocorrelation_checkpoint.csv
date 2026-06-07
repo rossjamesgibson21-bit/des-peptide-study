@@ -1,0 +1,7 @@
+system,replica,observable,tau_int_ns,N_eff,CI_inflation,T_over_tau,reliable,n_analysed_frames,mean
+CME_water,1,SASA,1.515,59.4,12.3,59.4,True,9000,3.8815
+CME_water,1,Rg,7.051,12.8,26.6,12.8,False,9000,0.7919
+GGE_water,1,SASA,4.511,20.0,21.2,20.0,False,9000,2.5131
+GGE_water,1,Rg,4.243,21.2,20.6,21.2,False,9000,0.6942
+YIY_water,1,SASA,2.845,31.6,16.9,31.6,False,9000,5.3358
+YIY_water,1,Rg,10.709,8.4,32.7,8.4,False,9000,0.6547
