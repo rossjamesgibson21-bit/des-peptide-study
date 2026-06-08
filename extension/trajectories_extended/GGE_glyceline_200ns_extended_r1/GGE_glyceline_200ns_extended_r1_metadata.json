@@ -1,0 +1,20 @@
+{
+  "system": "GGE_glyceline",
+  "ns": 200,
+  "start": "extended",
+  "replicate": 1,
+  "tag": "GGE_glyceline_200ns_extended_r1",
+  "seed": 631532513,
+  "platform": "OpenCL",
+  "n_atoms": 2894,
+  "n_steps": 100000000,
+  "expected_frames": 200000,
+  "n_frames": 200000,
+  "last_frame_finite": true,
+  "verified": true,
+  "start_pe_kJ_mol": -31092.9,
+  "wall_h": 9.1,
+  "ns_per_day": 527.5,
+  "save_interval_steps": 500,
+  "start_structure": "None"
+}
