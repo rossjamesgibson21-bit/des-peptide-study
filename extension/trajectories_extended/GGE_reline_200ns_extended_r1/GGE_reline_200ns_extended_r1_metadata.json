@@ -1,0 +1,20 @@
+{
+  "system": "GGE_reline",
+  "ns": 200,
+  "start": "extended",
+  "replicate": 1,
+  "tag": "GGE_reline_200ns_extended_r1",
+  "seed": 2064270913,
+  "platform": "OpenCL",
+  "n_atoms": 2867,
+  "n_steps": 100000000,
+  "expected_frames": 200000,
+  "n_frames": 200000,
+  "last_frame_finite": true,
+  "verified": true,
+  "start_pe_kJ_mol": -45285.2,
+  "wall_h": 9.1,
+  "ns_per_day": 527.7,
+  "save_interval_steps": 500,
+  "start_structure": "None"
+}
