@@ -1,0 +1,4 @@
+label,target_pct,frame,time_ns,Rg_nm,motif_SASA_nm2,pdb_path
+compact,10,43165,43.2,0.655,2.51,/Users/rossgibson/des-peptide-study/extension/start_frames/GGE_reline/GGE_reline_compact.pdb
+mid,50,83529,83.5,0.763,3.146,/Users/rossgibson/des-peptide-study/extension/start_frames/GGE_reline/GGE_reline_mid.pdb
+open,90,149948,149.9,0.911,3.452,/Users/rossgibson/des-peptide-study/extension/start_frames/GGE_reline/GGE_reline_open.pdb
