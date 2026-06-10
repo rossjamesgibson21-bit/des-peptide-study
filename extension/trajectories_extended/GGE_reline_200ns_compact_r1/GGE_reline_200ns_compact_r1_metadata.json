@@ -1,0 +1,20 @@
+{
+  "system": "GGE_reline",
+  "ns": 200,
+  "start": "compact",
+  "replicate": 1,
+  "tag": "GGE_reline_200ns_compact_r1",
+  "seed": 984440835,
+  "platform": "OpenCL",
+  "n_atoms": 2867,
+  "n_steps": 100000000,
+  "expected_frames": 200000,
+  "n_frames": 200000,
+  "last_frame_finite": true,
+  "verified": true,
+  "start_pe_kJ_mol": -45839.3,
+  "wall_h": 8.88,
+  "ns_per_day": 540.7,
+  "save_interval_steps": 500,
+  "start_structure": "/Users/rossgibson/des-peptide-study/extension/start_frames/GGE_reline/GGE_reline_compact.pdb"
+}
