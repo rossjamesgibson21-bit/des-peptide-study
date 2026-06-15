@@ -1,3 +1,7 @@
 pair,observable,delta_mean,z,overlap
 compact vs extended,RG,-0.0583,1.87,0.63
 compact vs extended,SASA,-0.3858,2.18,0.61
+compact vs mid,RG,0.0474,1.78,0.46
+compact vs mid,SASA,0.0324,0.3,0.78
+extended vs mid,RG,0.1057,3.18,0.43
+extended vs mid,SASA,0.4182,2.09,0.66
