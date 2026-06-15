@@ -1,0 +1,20 @@
+{
+  "system": "CME_reline",
+  "ns": 200,
+  "start": "open",
+  "replicate": 1,
+  "tag": "CME_reline_200ns_open_r1",
+  "seed": 927430075,
+  "platform": "OpenCL",
+  "n_atoms": 2898,
+  "n_steps": 100000000,
+  "expected_frames": 200000,
+  "n_frames": 200000,
+  "last_frame_finite": true,
+  "verified": true,
+  "start_pe_kJ_mol": -45536.9,
+  "wall_h": 9.06,
+  "ns_per_day": 529.7,
+  "save_interval_steps": 500,
+  "start_structure": "/Users/rossgibson/des-peptide-study/extension/start_frames/CME_reline/CME_reline_open.pdb"
+}
