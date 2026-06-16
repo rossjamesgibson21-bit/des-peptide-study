@@ -1,0 +1,4 @@
+label,target_pct,frame,time_ns,Rg_nm,motif_SASA_nm2,pdb_path
+compact,10,76568,76.6,0.618,5.226,/Users/rossgibson/des-peptide-study/extension/start_frames/YIY_reline/YIY_reline_compact.pdb
+mid,50,80599,80.6,0.686,5.183,/Users/rossgibson/des-peptide-study/extension/start_frames/YIY_reline/YIY_reline_mid.pdb
+open,90,132775,132.8,0.736,5.659,/Users/rossgibson/des-peptide-study/extension/start_frames/YIY_reline/YIY_reline_open.pdb
