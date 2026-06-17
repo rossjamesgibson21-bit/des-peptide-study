@@ -3,5 +3,11 @@ compact vs extended,RG,-0.0499,4.15,0.53
 compact vs extended,SASA,-0.1564,2.06,0.76
 compact vs mid,RG,-0.0445,5.09,0.5
 compact vs mid,SASA,-0.2267,3.09,0.71
+compact vs open,RG,-0.0256,1.12,0.46
+compact vs open,SASA,0.0303,0.33,0.85
 extended vs mid,RG,0.0054,0.41,0.78
 extended vs mid,SASA,-0.0703,0.85,0.91
+extended vs open,RG,0.0243,0.98,0.74
+extended vs open,SASA,0.1867,1.89,0.81
+mid vs open,RG,0.0189,0.81,0.86
+mid vs open,SASA,0.257,2.65,0.76
