@@ -1,0 +1,20 @@
+{
+  "system": "YIY_reline",
+  "ns": 200,
+  "start": "open",
+  "replicate": 1,
+  "tag": "YIY_reline_200ns_open_r1",
+  "seed": 444237519,
+  "platform": "OpenCL",
+  "n_atoms": 2849,
+  "n_steps": 100000000,
+  "expected_frames": 200000,
+  "n_frames": 200000,
+  "last_frame_finite": true,
+  "verified": true,
+  "start_pe_kJ_mol": -44034.4,
+  "wall_h": 9.15,
+  "ns_per_day": 524.5,
+  "save_interval_steps": 500,
+  "start_structure": "/Users/rossgibson/des-peptide-study/extension/start_frames/YIY_reline/YIY_reline_open.pdb"
+}
