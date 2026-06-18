@@ -1,0 +1,4 @@
+label,target_pct,frame,time_ns,Rg_nm,motif_SASA_nm2,pdb_path
+compact,10,97498,97.5,0.606,5.859,/Users/rossgibson/des-peptide-study/extension/start_frames/YIY_glyceline/YIY_glyceline_compact.pdb
+mid,50,171845,171.8,0.697,5.584,/Users/rossgibson/des-peptide-study/extension/start_frames/YIY_glyceline/YIY_glyceline_mid.pdb
+open,90,65452,65.5,0.735,5.025,/Users/rossgibson/des-peptide-study/extension/start_frames/YIY_glyceline/YIY_glyceline_open.pdb
