@@ -1,0 +1,20 @@
+{
+  "system": "YIY_glyceline",
+  "ns": 200,
+  "start": "open",
+  "replicate": 1,
+  "tag": "YIY_glyceline_200ns_open_r1",
+  "seed": 662774275,
+  "platform": "OpenCL",
+  "n_atoms": 2876,
+  "n_steps": 100000000,
+  "expected_frames": 200000,
+  "n_frames": 200000,
+  "last_frame_finite": true,
+  "verified": true,
+  "start_pe_kJ_mol": -30501.3,
+  "wall_h": 9.03,
+  "ns_per_day": 531.3,
+  "save_interval_steps": 500,
+  "start_structure": "/Users/rossgibson/des-peptide-study/extension/start_frames/YIY_glyceline/YIY_glyceline_open.pdb"
+}
