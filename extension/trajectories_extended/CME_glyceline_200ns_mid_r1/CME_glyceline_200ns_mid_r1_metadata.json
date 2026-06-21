@@ -1,0 +1,20 @@
+{
+  "system": "CME_glyceline",
+  "ns": 200,
+  "start": "mid",
+  "replicate": 1,
+  "tag": "CME_glyceline_200ns_mid_r1",
+  "seed": 185104724,
+  "platform": "OpenCL",
+  "n_atoms": 2925,
+  "n_steps": 100000000,
+  "expected_frames": 200000,
+  "n_frames": 200000,
+  "last_frame_finite": true,
+  "verified": true,
+  "start_pe_kJ_mol": -31568.2,
+  "wall_h": 9.0,
+  "ns_per_day": 533.6,
+  "save_interval_steps": 500,
+  "start_structure": "/Users/rossgibson/des-peptide-study/extension/start_frames/CME_glyceline/CME_glyceline_mid.pdb"
+}
