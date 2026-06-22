@@ -1,0 +1,4 @@
+label,target_pct,frame,time_ns,Rg_nm,motif_SASA_nm2,pdb_path
+compact,10,79581,79.6,0.668,3.862,/Users/rossgibson/des-peptide-study/extension/start_frames/CME_water/CME_water_compact.pdb
+mid,50,69543,69.5,0.793,4.242,/Users/rossgibson/des-peptide-study/extension/start_frames/CME_water/CME_water_mid.pdb
+open,90,39065,39.1,0.936,3.657,/Users/rossgibson/des-peptide-study/extension/start_frames/CME_water/CME_water_open.pdb
