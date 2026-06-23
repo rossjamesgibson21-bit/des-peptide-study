@@ -1,0 +1,20 @@
+{
+  "system": "CME_water",
+  "ns": 200,
+  "start": "extended",
+  "replicate": 1,
+  "tag": "CME_water_200ns_extended_r1",
+  "seed": 124132340,
+  "platform": "OpenCL",
+  "n_atoms": 2869,
+  "n_steps": 100000000,
+  "expected_frames": 200000,
+  "n_frames": 200000,
+  "last_frame_finite": true,
+  "verified": true,
+  "start_pe_kJ_mol": -37329.9,
+  "wall_h": 9.12,
+  "ns_per_day": 526.3,
+  "save_interval_steps": 500,
+  "start_structure": "None"
+}
