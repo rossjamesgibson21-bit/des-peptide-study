@@ -1,0 +1,20 @@
+{
+  "system": "CME_water",
+  "ns": 200,
+  "start": "compact",
+  "replicate": 1,
+  "tag": "CME_water_200ns_compact_r1",
+  "seed": 596963697,
+  "platform": "OpenCL",
+  "n_atoms": 2869,
+  "n_steps": 100000000,
+  "expected_frames": 200000,
+  "n_frames": 200000,
+  "last_frame_finite": true,
+  "verified": true,
+  "start_pe_kJ_mol": -37533.5,
+  "wall_h": 8.94,
+  "ns_per_day": 536.7,
+  "save_interval_steps": 500,
+  "start_structure": "/Users/rossgibson/des-peptide-study/extension/start_frames/CME_water/CME_water_compact.pdb"
+}
