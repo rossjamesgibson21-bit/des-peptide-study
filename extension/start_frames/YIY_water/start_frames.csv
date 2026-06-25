@@ -1,0 +1,4 @@
+label,target_pct,frame,time_ns,Rg_nm,motif_SASA_nm2,pdb_path
+compact,10,97757,97.8,0.58,5.278,/Users/rossgibson/des-peptide-study/extension/start_frames/YIY_water/YIY_water_compact.pdb
+mid,50,28867,28.9,0.654,5.07,/Users/rossgibson/des-peptide-study/extension/start_frames/YIY_water/YIY_water_mid.pdb
+open,90,66450,66.5,0.709,5.183,/Users/rossgibson/des-peptide-study/extension/start_frames/YIY_water/YIY_water_open.pdb
