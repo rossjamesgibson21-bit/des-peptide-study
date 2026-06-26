@@ -1,0 +1,20 @@
+{
+  "system": "YIY_water",
+  "ns": 200,
+  "start": "compact",
+  "replicate": 1,
+  "tag": "YIY_water_200ns_compact_r1",
+  "seed": 1910087156,
+  "platform": "OpenCL",
+  "n_atoms": 2820,
+  "n_steps": 100000000,
+  "expected_frames": 200000,
+  "n_frames": 200000,
+  "last_frame_finite": true,
+  "verified": true,
+  "start_pe_kJ_mol": -36282.7,
+  "wall_h": 9.08,
+  "ns_per_day": 528.5,
+  "save_interval_steps": 500,
+  "start_structure": "/Users/rossgibson/des-peptide-study/extension/start_frames/YIY_water/YIY_water_compact.pdb"
+}
