@@ -1,0 +1,20 @@
+{
+  "system": "GGE_water",
+  "ns": 200,
+  "start": "extended",
+  "replicate": 1,
+  "tag": "GGE_water_200ns_extended_r1",
+  "seed": 1005965237,
+  "platform": "OpenCL",
+  "n_atoms": 2838,
+  "n_steps": 100000000,
+  "expected_frames": 200000,
+  "n_frames": 200000,
+  "last_frame_finite": true,
+  "verified": true,
+  "start_pe_kJ_mol": -37452.2,
+  "wall_h": 8.88,
+  "ns_per_day": 540.4,
+  "save_interval_steps": 500,
+  "start_structure": "None"
+}
