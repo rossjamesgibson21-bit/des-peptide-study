@@ -1,0 +1,20 @@
+{
+  "system": "GGE_water",
+  "ns": 200,
+  "start": "open",
+  "replicate": 1,
+  "tag": "GGE_water_200ns_open_r1",
+  "seed": 1688747588,
+  "platform": "OpenCL",
+  "n_atoms": 2838,
+  "n_steps": 100000000,
+  "expected_frames": 200000,
+  "n_frames": 200000,
+  "last_frame_finite": true,
+  "verified": true,
+  "start_pe_kJ_mol": -37308.6,
+  "wall_h": 9.22,
+  "ns_per_day": 520.9,
+  "save_interval_steps": 500,
+  "start_structure": "/Users/rossgibson/des-peptide-study/extension/start_frames/GGE_water/GGE_water_open.pdb"
+}
