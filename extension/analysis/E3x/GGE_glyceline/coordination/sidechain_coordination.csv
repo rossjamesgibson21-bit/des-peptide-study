@@ -1,0 +1,9 @@
+reference,partner,cutoff_nm,pooled_coord,ci95,N_eff_pooled,per_atom,structured_shell,note
+motif_Glu,water_O,0.327,5.509,0.06,2233.0,2.7545,True,compact:5.426±0.142(Neff400);extended:5.518±0.117(Neff585);mid:5.552±0.114(Neff606);open:5.540±0.114(Neff641)
+motif_Glu,choline_N,0.522,0.4435,0.0234,4150.7,0.2218,True,compact:0.394±0.045(Neff1059);extended:0.440±0.042(Neff1274);mid:0.504±0.050(Neff1020);open:0.436±0.053(Neff798)
+motif_Glu,chloride,,0.0,0.0,,0.0,False,no shell → no coordination
+motif_Glu,glycerol_O,0.317,0.6309,0.0433,2054.9,0.3155,True,compact:0.614±0.075(Neff630);extended:0.603±0.095(Neff422);mid:0.644±0.087(Neff524);open:0.662±0.093(Neff479)
+flank_Glu,water_O,0.327,16.7601,0.0917,2776.9,2.7934,True,compact:16.735±0.169(Neff801);extended:16.722±0.190(Neff661);mid:16.629±0.190(Neff658);open:16.954±0.185(Neff657)
+flank_Glu,choline_N,0.527,1.38,0.0452,3524.7,0.23,True,compact:1.450±0.094(Neff872);extended:1.372±0.085(Neff967);mid:1.350±0.090(Neff869);open:1.347±0.093(Neff816)
+flank_Glu,chloride,,0.0,0.0,,0.0,False,no shell → no coordination
+flank_Glu,glycerol_O,0.317,1.8527,0.0718,2158.7,0.3088,True,compact:1.864±0.136(Neff596);extended:1.800±0.143(Neff545);mid:1.970±0.152(Neff518);open:1.777±0.144(Neff499)
