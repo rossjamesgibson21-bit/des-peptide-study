@@ -1,0 +1,11 @@
+reference,partner,cutoff_nm,pooled_coord,ci95,N_eff_pooled,per_atom,structured_shell,note
+motif_Glu,water_O,0.322,5.7587,0.0437,2708.8,2.8794,True,compact:5.808±0.073(Neff982);extended:5.738±0.080(Neff797);mid:5.730±0.075(Neff930)
+motif_Glu,choline_N,0.548,0.6285,0.0351,2625.4,0.3142,True,compact:0.638±0.058(Neff962);extended:0.595±0.057(Neff923);mid:0.653±0.068(Neff740)
+motif_Glu,chloride,,0.0,0.0,,0.0,False,no shell → no coordination
+motif_Glu,urea_N,0.352,0.3087,0.0188,6168.3,0.1543,True,compact:0.331±0.036(Neff1839);extended:0.297±0.030(Neff2274);mid:0.298±0.032(Neff2056)
+motif_Glu,urea_O,,0.0,0.0,,0.0,False,no shell → no coordination
+flank_Glu,water_O,0.327,17.9749,0.053,5517.3,2.9958,True,compact:17.891±0.093(Neff1782);extended:17.915±0.088(Neff2015);mid:18.119±0.095(Neff1720)
+flank_Glu,choline_N,0.522,1.6996,0.0506,3336.3,0.2833,True,compact:1.713±0.076(Neff1453);extended:1.759±0.114(Neff700);mid:1.626±0.083(Neff1183)
+flank_Glu,chloride,,0.0,0.0,,0.0,False,no shell → no coordination
+flank_Glu,urea_N,0.392,1.3552,0.0437,5808.5,0.2259,True,compact:1.363±0.072(Neff2110);extended:1.346±0.077(Neff1892);mid:1.357±0.079(Neff1806)
+flank_Glu,urea_O,,0.0,0.0,,0.0,False,no shell → no coordination

@@ -1,0 +1,2 @@
+system,tier,n_starts,starts,character,sasa_pooled_nm2,sasa_ci95,sasa_verdict,rg_pooled_nm,rg_ci95,rg_verdict,hbond_events,hbond_median_ps,hbond_resolution_ps,hbond_break_tol_frames,hbond_n_backbone_bonds,n_structured_backbone_pairs,n_structured_sidechain_pairs
+GGE_reline,A,3,compact;extended;mid,clean / ergodic,2.8056,0.0662,robust,0.7636,0.0189,robust,36061,2.0,1.0,0,4,4,6

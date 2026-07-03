@@ -1,0 +1,11 @@
+reference,partner,cutoff_nm,coord_lo,coord_mid,coord_hi,rel_spread,mag_sensitivity,shell_across_band
+backbone_O,water_O,0.333,2.251,4.643,6.999,1.023,high,True
+backbone_O,choline_N,0.412,0.067,0.397,0.779,1.795,high,True
+backbone_O,urea_N,0.423,0.638,0.923,1.294,0.711,high,True
+backbone_O,urea_O,0.562,0.927,1.285,1.688,0.593,high,True
+motif_Glu,water_O,0.322,2.763,5.759,7.702,0.858,high,True
+motif_Glu,choline_N,0.548,0.424,0.628,0.882,0.73,high,True
+motif_Glu,urea_N,0.352,0.13,0.309,0.5,1.197,high,True
+flank_Glu,water_O,0.327,10.408,17.975,24.192,0.767,high,True
+flank_Glu,choline_N,0.522,1.053,1.7,2.437,0.814,high,True
+flank_Glu,urea_N,0.392,0.823,1.355,2.043,0.9,high,True

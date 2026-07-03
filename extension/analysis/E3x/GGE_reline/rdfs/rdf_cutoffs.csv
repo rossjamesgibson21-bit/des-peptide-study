@@ -1,0 +1,16 @@
+reference,partner,first_min_nm,n_ref,n_partner,sidechain_novel,note
+backbone_O,water_O,0.333,3,744,False,E3.0 0.333-0.343 → ✓
+backbone_O,choline_N,0.412,3,13,False,shell at 0.412 but E3.0 expected none ⚠
+backbone_O,chloride,,3,13,False,no shell (E3.0: no structured shell)
+backbone_O,urea_N,0.423,3,52,False,E3.0 0.358-0.412 → ✓
+backbone_O,urea_O,0.562,3,26,False,E3.0 0.538-0.543 → ✓
+motif_Glu,water_O,0.322,2,744,True,
+motif_Glu,choline_N,0.548,2,13,True,
+motif_Glu,chloride,,2,13,True,
+motif_Glu,urea_N,0.352,2,52,True,
+motif_Glu,urea_O,,2,26,True,
+flank_Glu,water_O,0.327,6,744,True,
+flank_Glu,choline_N,0.522,6,13,True,
+flank_Glu,chloride,,6,13,True,
+flank_Glu,urea_N,0.392,6,52,True,
+flank_Glu,urea_O,,6,26,True,
