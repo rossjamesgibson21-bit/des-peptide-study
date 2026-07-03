@@ -1,0 +1,3 @@
+reference,partner,cutoff_nm,coord_lo,coord_mid,coord_hi,rel_spread,mag_sensitivity,shell_across_band
+backbone_O,water_O,0.333,1.191,2.416,3.454,0.937,high,True
+motif_Glu,water_O,0.327,2.905,5.129,6.988,0.796,high,True

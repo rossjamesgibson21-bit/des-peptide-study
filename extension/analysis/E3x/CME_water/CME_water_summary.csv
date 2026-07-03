@@ -1,0 +1,2 @@
+system,tier,n_starts,starts,character,sasa_pooled_nm2,sasa_ci95,sasa_verdict,rg_pooled_nm,rg_ci95,rg_verdict,hbond_events,hbond_median_ps,hbond_resolution_ps,hbond_break_tol_frames,hbond_n_backbone_bonds,n_structured_backbone_pairs,n_structured_sidechain_pairs
+CME_water,A,4,compact;extended;mid;open,single broad basin (robust),3.1505,0.0841,robust,0.6959,0.013,robust,307222,2.0,1.0,0,11,1,1

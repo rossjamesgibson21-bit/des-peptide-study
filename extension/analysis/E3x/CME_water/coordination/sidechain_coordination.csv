@@ -1,0 +1,4 @@
+reference,partner,cutoff_nm,pooled_coord,ci95,N_eff_pooled,per_atom,structured_shell,note
+motif_Cys,water_O,,0.0,0.0,,0.0,False,no shell → no coordination
+motif_Met,water_O,,0.0,0.0,,0.0,False,no shell → no coordination
+motif_Glu,water_O,0.327,5.1293,0.0985,605.9,2.5646,True,compact:5.143±0.249(Neff103);extended:5.265±0.234(Neff112);mid:4.961±0.124(Neff307);open:5.149±0.269(Neff83)
