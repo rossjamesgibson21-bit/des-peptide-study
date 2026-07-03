@@ -1,0 +1,4 @@
+reference,partner,first_min_nm,cutoff_source,n_ref,n_partner,sidechain_novel,note
+backbone_O,water_O,0.333,fixed,3,899,False,"flat RDF (g_max<1.05); fixed cutoff 0.333 (E3.0 0.333-0.343) - baseline, not RDF-derived"
+motif_Glu,water_O,0.322,rdf,2,899,True,
+flank_Glu,water_O,0.322,rdf,6,899,True,

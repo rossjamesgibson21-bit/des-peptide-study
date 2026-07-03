@@ -1,0 +1,2 @@
+reference,partner,cutoff_nm,pooled_coord,ci95,N_eff_pooled,per_atom,structured_shell,note
+backbone_O,water_O,0.333,4.8929,0.255,197.1,1.631,True,compact:4.333±0.892(Neff15);extended:5.628±0.427(Neff49);mid:3.782±0.517(Neff40);open:5.828±0.298(Neff93)
