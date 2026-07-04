@@ -1,0 +1,9 @@
+reference,partner,cutoff_nm,coord_lo,coord_mid,coord_hi,rel_spread,mag_sensitivity,shell_across_band
+backbone_O,water_O,0.338,2.462,4.27,6.067,0.844,high,True
+backbone_O,choline_N,0.417,0.048,0.223,0.431,1.72,high,True
+backbone_O,urea_N,0.407,0.587,0.817,1.104,0.633,high,True
+backbone_O,urea_O,0.562,1.135,1.515,1.933,0.527,high,True
+motif_Tyr,water_O,0.358,2.953,5.381,8.434,1.019,high,True
+motif_Tyr,chloride,0.377,0.036,0.075,0.111,1.008,high,True
+motif_Tyr,urea_N,0.387,0.253,0.555,0.927,1.215,high,True
+motif_Tyr,urea_O,0.312,0.013,0.1,0.173,1.601,high,True
