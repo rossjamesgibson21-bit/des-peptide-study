@@ -1,0 +1,9 @@
+observable,dropped,mean_without,shift,shift_gt_ci
+RG,compact,0.6836,-0.0074,False
+RG,extended,0.6916,0.0006,False
+RG,mid,0.7095,0.0185,True
+RG,open,0.6793,-0.0116,False
+SASA,compact,3.2167,-0.0236,False
+SASA,extended,3.271,0.0308,False
+SASA,mid,3.3593,0.119,True
+SASA,open,3.114,-0.1262,True
