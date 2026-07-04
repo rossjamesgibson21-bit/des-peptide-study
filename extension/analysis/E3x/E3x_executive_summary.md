@@ -88,7 +88,7 @@ Anchoring figures are the pooled, ACF-corrected values reported in each file.
 Phase-3 effect size 1.18); its verdict against corrected CIs is the load-bearing E3.1
 result for the campaign. Glycerol resolves no structured backbone shell (the RDF guard
 rejects a spurious second-shell minimum); side-chain glycerol contact is at the Glu
-carboxyl. Pooled SASA/Rg to be read from the file.
+carboxyl. SASA 2.612 ± 0.064 nm², Rg 0.706 ± 0.018 nm, both robust.
 
 **GGE_water** (D, 2 states). SASA a two-state ensemble — high 2.844 ± 0.062 nm²
 (extended, open) and low 2.336 ± 0.088 nm² (compact, mid), pooled 2.590 ± 0.066 nm² —
