@@ -1,0 +1,2 @@
+reference,partner,cutoff_nm,pooled_coord,ci95,N_eff_pooled,per_atom,structured_shell,note
+motif_Tyr,water_O,0.358,6.6924,0.0159,36147.7,3.3462,True,compact:6.752±0.029(Neff10490);extended:6.556±0.032(Neff9116);mid:6.727±0.030(Neff10412);open:6.734±0.039(Neff6129)

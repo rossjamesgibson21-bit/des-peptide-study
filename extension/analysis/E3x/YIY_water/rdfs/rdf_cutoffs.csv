@@ -1,0 +1,3 @@
+reference,partner,first_min_nm,cutoff_source,n_ref,n_partner,sidechain_novel,note
+backbone_O,water_O,0.338,rdf,3,899,False,E3.0 0.333-0.343 -> ok
+motif_Tyr,water_O,0.358,rdf,2,899,True,
