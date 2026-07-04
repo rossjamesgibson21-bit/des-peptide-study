@@ -1,0 +1,21 @@
+reference,partner,first_min_nm,cutoff_source,n_ref,n_partner,sidechain_novel,note
+backbone_O,water_O,0.333,fixed,3,744,False,"flat RDF (g_max<1.05); fixed cutoff 0.333 (E3.0 0.333-0.343) - baseline, not RDF-derived"
+backbone_O,choline_N,0.407,rdf,3,13,False,shell at 0.407 but E3.0 expected none
+backbone_O,chloride,,none,3,13,False,no shell (E3.0: no structured shell)
+backbone_O,urea_N,,none,3,52,False,no shell (E3.0: slight system dependence)
+backbone_O,urea_O,,none,3,26,False,no shell (E3.0: MISSED by 0.35 default)
+motif_Cys,water_O,,none,1,744,True,no structured shell (flat RDF)
+motif_Cys,choline_N,0.433,rdf,1,13,True,
+motif_Cys,chloride,,none,1,13,True,no structured shell (flat RDF)
+motif_Cys,urea_N,0.447,rdf,1,52,True,
+motif_Cys,urea_O,0.377,rdf,1,26,True,
+motif_Met,water_O,,none,1,744,True,no structured shell (flat RDF)
+motif_Met,choline_N,0.447,rdf,1,13,True,
+motif_Met,chloride,,none,1,13,True,no structured shell (flat RDF)
+motif_Met,urea_N,0.433,rdf,1,52,True,
+motif_Met,urea_O,,none,1,26,True,no structured shell (flat RDF)
+motif_Glu,water_O,0.327,rdf,2,744,True,
+motif_Glu,choline_N,0.527,rdf,2,13,True,
+motif_Glu,chloride,,none,2,13,True,no structured shell (flat RDF)
+motif_Glu,urea_N,0.392,rdf,2,52,True,
+motif_Glu,urea_O,,none,2,26,True,no structured shell (flat RDF)

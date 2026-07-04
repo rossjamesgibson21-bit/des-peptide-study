@@ -1,0 +1,16 @@
+reference,partner,cutoff_nm,pooled_coord,ci95,N_eff_pooled,per_atom,structured_shell,note
+motif_Cys,water_O,,0.0,0.0,,0.0,False,no shell → no coordination
+motif_Cys,choline_N,0.433,0.0739,0.0052,9925.9,0.0739,True,compact:0.057±0.009(Neff2384);extended:0.079±0.012(Neff2018);mid:0.072±0.010(Neff2756);open:0.088±0.011(Neff2768)
+motif_Cys,chloride,,0.0,0.0,,0.0,False,no shell → no coordination
+motif_Cys,urea_N,0.447,0.4379,0.0193,5731.2,0.4379,True,compact:0.401±0.036(Neff1531);extended:0.471±0.042(Neff1280);mid:0.400±0.039(Neff1255);open:0.479±0.037(Neff1666)
+motif_Cys,urea_O,0.377,0.0937,0.0053,12461.6,0.0937,True,compact:0.098±0.012(Neff2444);extended:0.114±0.013(Neff2679);mid:0.085±0.012(Neff2265);open:0.078±0.008(Neff5073)
+motif_Met,water_O,,0.0,0.0,,0.0,False,no shell → no coordination
+motif_Met,choline_N,0.447,0.1245,0.0074,7795.3,0.1245,True,compact:0.114±0.017(Neff1455);extended:0.149±0.016(Neff1967);mid:0.106±0.012(Neff2436);open:0.129±0.015(Neff1938)
+motif_Met,chloride,,0.0,0.0,,0.0,False,no shell → no coordination
+motif_Met,urea_N,0.433,0.3793,0.0157,7227.0,0.3793,True,compact:0.377±0.030(Neff1968);extended:0.402±0.032(Neff1895);mid:0.391±0.030(Neff2049);open:0.347±0.036(Neff1314)
+motif_Met,urea_O,,0.0,0.0,,0.0,False,no shell → no coordination
+motif_Glu,water_O,0.327,5.225,0.0853,1056.5,2.6125,True,compact:4.567±0.253(Neff102);extended:5.148±0.853(Neff11);mid:5.270±0.377(Neff51);open:5.915±0.078(Neff892)
+motif_Glu,choline_N,0.527,0.4816,0.0283,3029.1,0.2408,True,compact:0.405±0.042(Neff1090);extended:0.549±0.077(Neff457);mid:0.429±0.049(Neff886);open:0.543±0.069(Neff596)
+motif_Glu,chloride,,0.0,0.0,,0.0,False,no shell → no coordination
+motif_Glu,urea_N,0.392,0.4192,0.0209,7490.5,0.2096,True,compact:0.352±0.033(Neff2341);extended:0.415±0.046(Neff1545);mid:0.440±0.045(Neff1694);open:0.469±0.044(Neff1911)
+motif_Glu,urea_O,,0.0,0.0,,0.0,False,no shell → no coordination

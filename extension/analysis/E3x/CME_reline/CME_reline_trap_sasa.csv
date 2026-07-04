@@ -1,0 +1,2 @@
+trap_starts,consensus_starts,full_mean,full_ci95,cons_mean,cons_ci95,inclusion_shift,sidecar_sasa,sidecar_delta,per_start
+extended,compact;mid;open,3.399,0.0792,3.3073,0.0703,0.0917,3.399,0.0,compact:3.2881;extended:3.6740;mid:3.2558;open:3.3780

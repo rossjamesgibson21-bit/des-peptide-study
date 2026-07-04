@@ -1,0 +1,5 @@
+start,n_episodes,n_bonds,median_ps,mean_ps
+compact,39786,4,3.0,12.44
+extended,14472,3,3.0,10.63
+mid,53091,6,2.0,8.04
+open,50380,6,2.0,9.86
