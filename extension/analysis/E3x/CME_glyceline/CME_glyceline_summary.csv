@@ -1,0 +1,2 @@
+system,tier,n_starts,starts,character,sasa_pooled_nm2,sasa_ci95,sasa_verdict,rg_pooled_nm,rg_ci95,rg_verdict,hbond_events,hbond_median_ps,hbond_resolution_ps,hbond_break_tol_frames,hbond_n_backbone_bonds,n_structured_backbone_pairs,n_structured_sidechain_pairs
+CME_glyceline,D,4,compact;extended;mid;open,multi-basin (4 separated SASA states; heaviest caveat),3.2402,0.0602,dominated,0.691,0.0155,dominated,292136,2.0,1.0,0,12,2,6

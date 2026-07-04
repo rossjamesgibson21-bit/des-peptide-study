@@ -1,0 +1,17 @@
+reference,partner,first_min_nm,cutoff_source,n_ref,n_partner,sidechain_novel,note
+backbone_O,water_O,0.333,fixed,3,751,False,"flat RDF (g_max<1.05); fixed cutoff 0.333 (E3.0 0.333-0.343) - baseline, not RDF-derived"
+backbone_O,choline_N,0.412,rdf,3,10,False,shell at 0.412 but E3.0 expected none
+backbone_O,chloride,,none,3,10,False,no shell (E3.0: no structured shell)
+backbone_O,glycerol_O,,none,3,60,False,no shell (E3.0: no structured shell (indirect-mechanism support))
+motif_Cys,water_O,,none,1,751,True,no structured shell (flat RDF)
+motif_Cys,choline_N,0.442,rdf,1,10,True,
+motif_Cys,chloride,,none,1,10,True,no structured shell (flat RDF)
+motif_Cys,glycerol_O,0.412,rdf,1,60,True,
+motif_Met,water_O,,none,1,751,True,no structured shell (flat RDF)
+motif_Met,choline_N,0.442,rdf,1,10,True,
+motif_Met,chloride,,none,1,10,True,no structured shell (flat RDF)
+motif_Met,glycerol_O,,none,1,60,True,no structured shell (flat RDF)
+motif_Glu,water_O,0.327,rdf,2,751,True,
+motif_Glu,choline_N,0.498,rdf,2,10,True,
+motif_Glu,chloride,,none,2,10,True,no structured shell (flat RDF)
+motif_Glu,glycerol_O,0.317,rdf,2,60,True,

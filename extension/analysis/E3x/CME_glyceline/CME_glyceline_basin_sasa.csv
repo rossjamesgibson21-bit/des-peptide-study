@@ -1,0 +1,2 @@
+n_states,sidecar_sasa,sidecar_delta,pooled_mean,pooled_ci95,states,per_start
+4,3.2402,0.0,3.2402,0.0602,mid:2.8831+/-0.1014 | extended:3.1479+/-0.1206 | compact:3.3110+/-0.0667 | open:3.6189+/-0.1020,mid:2.8831(ci0.1014);extended:3.1479(ci0.1206);compact:3.3110(ci0.0667);open:3.6189(ci0.1020)

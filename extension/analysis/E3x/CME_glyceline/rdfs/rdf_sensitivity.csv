@@ -1,0 +1,9 @@
+reference,partner,cutoff_nm,coord_lo,coord_mid,coord_hi,rel_spread,mag_sensitivity,shell_across_band
+backbone_O,water_O,0.333,1.313,2.614,3.678,0.905,high,True
+backbone_O,choline_N,0.412,0.025,0.152,0.323,1.962,high,True
+motif_Cys,choline_N,0.442,0.01,0.086,0.185,2.031,high,True
+motif_Cys,glycerol_O,0.412,0.172,0.384,0.651,1.246,high,True
+motif_Met,choline_N,0.442,0.01,0.08,0.175,2.053,high,True
+motif_Glu,water_O,0.327,2.467,4.255,5.697,0.759,high,True
+motif_Glu,choline_N,0.498,0.143,0.273,0.409,0.973,high,True
+motif_Glu,glycerol_O,0.317,0.208,0.499,0.63,0.847,high,True
