@@ -1,0 +1,7 @@
+reference,partner,cutoff_nm,coord_lo,coord_mid,coord_hi,rel_spread,mag_sensitivity,shell_across_band
+backbone_O,water_O,0.338,2.415,4.229,5.992,0.846,high,True
+backbone_O,choline_N,0.423,0.073,0.276,0.491,1.517,high,True
+backbone_O,glycerol_O,0.322,0.09,0.321,0.532,1.38,high,True
+motif_Tyr,water_O,0.358,2.992,5.455,8.532,1.016,high,True
+motif_Tyr,chloride,0.382,0.031,0.057,0.087,0.993,high,True
+motif_Tyr,glycerol_O,0.538,1.525,2.339,3.321,0.768,high,True

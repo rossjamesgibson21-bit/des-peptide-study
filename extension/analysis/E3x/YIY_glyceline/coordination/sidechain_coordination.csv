@@ -1,0 +1,5 @@
+reference,partner,cutoff_nm,pooled_coord,ci95,N_eff_pooled,per_atom,structured_shell,note
+motif_Tyr,water_O,0.358,5.4553,0.0262,14193.6,2.7277,True,compact:5.523±0.056(Neff3162);extended:5.355±0.055(Neff3259);mid:5.559±0.047(Neff4379);open:5.384±0.053(Neff3393)
+motif_Tyr,choline_N,,0.0,0.0,,0.0,False,no shell → no coordination
+motif_Tyr,chloride,0.382,0.0569,0.0033,20123.3,0.0284,True,compact:0.052±0.006(Neff5432);extended:0.066±0.008(Neff3633);mid:0.053±0.006(Neff5479);open:0.057±0.006(Neff5580)
+motif_Tyr,glycerol_O,0.538,2.3387,0.0571,4300.1,1.1693,True,compact:2.289±0.109(Neff1137);extended:2.216±0.116(Neff1014);mid:2.456±0.112(Neff1168);open:2.393±0.122(Neff981)

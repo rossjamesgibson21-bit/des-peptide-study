@@ -1,0 +1,5 @@
+reference,partner,cutoff_nm,pooled_coord,ci95,N_eff_pooled,per_atom,structured_shell,note
+backbone_O,water_O,0.338,4.2288,0.053,2726.3,1.4096,True,compact:4.320±0.117(Neff568);extended:4.016±0.127(Neff430);mid:4.422±0.094(Neff929);open:4.157±0.096(Neff800)
+backbone_O,choline_N,0.423,0.2756,0.0297,1367.3,0.0919,True,compact:0.295±0.065(Neff305);extended:0.163±0.033(Neff606);mid:0.346±0.062(Neff366);open:0.298±0.124(Neff90)
+backbone_O,chloride,,0.0,0.0,,0.0,False,no shell → no coordination
+backbone_O,glycerol_O,0.322,0.3206,0.0183,4491.2,0.1069,True,compact:0.327±0.040(Neff956);extended:0.343±0.036(Neff1197);mid:0.309±0.037(Neff1128);open:0.302±0.034(Neff1210)

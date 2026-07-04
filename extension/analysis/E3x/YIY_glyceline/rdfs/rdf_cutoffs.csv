@@ -1,0 +1,9 @@
+reference,partner,first_min_nm,cutoff_source,n_ref,n_partner,sidechain_novel,note
+backbone_O,water_O,0.338,rdf,3,751,False,E3.0 0.333-0.343 -> ok
+backbone_O,choline_N,0.423,rdf,3,10,False,shell at 0.423 but E3.0 expected none
+backbone_O,chloride,,none,3,10,False,no shell (E3.0: no structured shell)
+backbone_O,glycerol_O,0.322,rdf,3,60,False,shell at 0.322 but E3.0 expected none
+motif_Tyr,water_O,0.358,rdf,2,751,True,
+motif_Tyr,choline_N,,none,2,10,True,no structured shell (flat RDF)
+motif_Tyr,chloride,0.382,rdf,2,10,True,
+motif_Tyr,glycerol_O,0.538,rdf,2,60,True,
