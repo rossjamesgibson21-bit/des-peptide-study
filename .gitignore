@@ -24,3 +24,6 @@ leap.log
 
 # Test files
 *_test.*
+Untitled*.ipynb
+**/Untitled*.ipynb
+**/.Rhistory

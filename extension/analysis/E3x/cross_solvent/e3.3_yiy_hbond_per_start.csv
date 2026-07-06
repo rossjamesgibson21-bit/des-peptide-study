@@ -1,0 +1,13 @@
+start,n_episodes,n_bonds,system,solvent
+compact,34007,3,YIY_water,water
+extended,9761,2,YIY_water,water
+mid,11074,2,YIY_water,water
+open,9743,2,YIY_water,water
+compact,22335,3,YIY_reline,reline
+extended,13773,2,YIY_reline,reline
+mid,0,0,YIY_reline,reline
+open,9570,2,YIY_reline,reline
+compact,16932,3,YIY_glyceline,glyceline
+extended,16679,2,YIY_glyceline,glyceline
+mid,14495,2,YIY_glyceline,glyceline
+open,14575,3,YIY_glyceline,glyceline

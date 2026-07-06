@@ -1,0 +1,10 @@
+peptide,scope,site,water,reline,glyceline
+CME,backbone,backbone_O,water_O,"choline_N, water_O","choline_N, water_O"
+CME,sidechain,motif_Cys,—,"choline_N, urea_N, urea_O","choline_N, glycerol_O"
+CME,sidechain,motif_Glu,water_O,"choline_N, urea_N, water_O","choline_N, glycerol_O, water_O"
+CME,sidechain,motif_Met,—,"choline_N, urea_N",choline_N
+GGE,backbone,backbone_O,water_O,"choline_N, urea_N, urea_O, water_O","choline_N, water_O"
+GGE,sidechain,flank_Glu,water_O,"choline_N, urea_N, water_O","choline_N, glycerol_O, water_O"
+GGE,sidechain,motif_Glu,water_O,"choline_N, urea_N, water_O","choline_N, glycerol_O, water_O"
+YIY,backbone,backbone_O,water_O,"choline_N, urea_N, urea_O, water_O","choline_N, glycerol_O, water_O"
+YIY,sidechain,motif_Tyr,water_O,"chloride, urea_N, urea_O, water_O","chloride, glycerol_O, water_O"

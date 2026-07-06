@@ -1,0 +1,10 @@
+system,tier,summary,backbone,sidechain,rdf_cutoffs,hbond_life,hbond_perstart,tier_sasa
+GGE_water,D,True,True,True,True,True,True,True
+GGE_reline,A,True,True,True,True,True,True,—
+GGE_glyceline,A,True,True,True,True,True,True,—
+CME_water,A,True,True,True,True,True,True,—
+CME_reline,C,True,True,True,True,True,True,True
+CME_glyceline,D,True,True,True,True,True,True,True
+YIY_water,B,True,True,True,True,True,True,—
+YIY_reline,B,True,True,True,True,True,True,—
+YIY_glyceline,B,True,True,True,True,True,True,—

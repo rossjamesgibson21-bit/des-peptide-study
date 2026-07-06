@@ -1,0 +1,7 @@
+peptide,contrast,dSASA_nm2,ci95,lo,hi,excludes_zero,water_tier,des_tier,note
+GGE,reline - water,0.216,0.093,0.122,0.309,True,D,A,"water baseline tier-D (ensemble, not equilibrium)"
+GGE,glyceline - water,0.022,0.092,-0.069,0.114,False,D,A,"water baseline tier-D (ensemble, not equilibrium)"
+CME,reline - water,0.248,0.116,0.133,0.364,True,A,C,
+CME,glyceline - water,0.09,0.103,-0.014,0.193,False,A,D,"des tier-D (ensemble, not equilibrium)"
+YIY,reline - water,0.135,0.073,0.062,0.208,True,B,B,
+YIY,glyceline - water,0.002,0.056,-0.054,0.058,False,B,B,
