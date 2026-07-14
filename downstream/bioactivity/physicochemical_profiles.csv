@@ -1,0 +1,10 @@
+sequence,length,peptide,motif,protease,MW_Da,pI,charge_pH7,GRAVY,instability_index,aox_raw_score,aox_normalised,aox_residue_count,aox_residue_fraction,n_bioactive_motifs,bioactive_motifs,n_Cys,n_Met,n_Trp,n_Tyr,n_His,n_Glu,n_Asp,n_Phe
+NTDEEEGGEIVFGGVDPK,18,GGE,GGE,Trypsin,1890.85,3.34,-4.99,-0.922,40.9,10.5,0.583,8,0.444,8,EE(antioxidant); EE(antioxidant); GGE(antioxidant); VF(ACE-inhibitory); GG(ACE-inhibitory); GG(ACE-inhibitory); IVF(ACE-inhibitory); PK(ACE-inhibitory),0,0,0,0,0,4,2,1
+NTDEEEGGEIVF,12,GGE,GGE,Chymotrypsin,1337.56,2.8,-4.99,-0.917,59.5,8.5,0.708,6,0.5,6,EE(antioxidant); EE(antioxidant); GGE(antioxidant); VF(ACE-inhibitory); GG(ACE-inhibitory); IVF(ACE-inhibitory),0,0,0,0,0,4,1,1
+NTDEEEGGEIV,11,GGE,GGE,Pepsin (pH 2),1190.49,2.8,-4.99,-1.255,64.0,7.5,0.682,5,0.455,4,EE(antioxidant); EE(antioxidant); GGE(antioxidant); GG(ACE-inhibitory),0,0,0,0,0,4,1,0
+LYQCMEFVR,9,CME,CME,Trypsin,1187.55,6.21,-0.06,0.267,18.9,10.5,1.167,5,0.556,2,CME(antioxidant); VR(ACE-inhibitory),1,1,0,1,0,1,0,1
+QCME,4,CME,CME,Pepsin (pH 2),509.16,3.3,-1.06,-0.65,70.2,7.0,1.75,3,0.75,1,CME(antioxidant),1,1,0,0,0,1,0,0
+NPYIYK,6,YIY,YIY,Trypsin,796.41,9.56,1.0,-1.183,3.5,5.5,0.917,3,0.5,2,YIY(antioxidant); IY(DPP-IV inhibitory),0,0,0,2,0,0,0,0
+GGE,3,GGE,GGE,Motif only (reference),261.1,3.3,-1.0,-1.433,19.5,1.5,0.5,1,0.333,2,GGE(antioxidant); GG(ACE-inhibitory),0,0,0,0,0,1,0,0
+CME,3,CME,CME,Motif only (reference),381.1,3.3,-1.06,0.3,115.3,7.0,2.333,3,1.0,1,CME(antioxidant),1,1,0,0,0,1,0,0
+YIY,3,YIY,YIY,Motif only (reference),457.22,5.88,-0.0,0.633,6.7,5.0,1.667,2,0.667,2,YIY(antioxidant); IY(DPP-IV inhibitory),0,0,0,2,0,0,0,0

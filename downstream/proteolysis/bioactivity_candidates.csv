@@ -1,0 +1,10 @@
+peptide,motif,protease,fragment_sequence,fragment_length
+GGE,GGE,Trypsin,NTDEEEGGEIVFGGVDPK,18
+GGE,GGE,Chymotrypsin,NTDEEEGGEIVF,12
+GGE,GGE,Pepsin (pH 2),NTDEEEGGEIV,11
+CME,CME,Trypsin,LYQCMEFVR,9
+CME,CME,Pepsin (pH 2),QCME,4
+YIY,YIY,Trypsin,NPYIYK,6
+GGE,GGE,Motif only (reference),GGE,3
+CME,CME,Motif only (reference),CME,3
+YIY,YIY,Motif only (reference),YIY,3

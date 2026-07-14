@@ -1,0 +1,27 @@
+peptide,source_sequence,protease,fragment_start,fragment_end,fragment_start_1idx,fragment_end_1idx,fragment_sequence,fragment_length,motif_status,motif
+GGE,NTDEEEGGEIVFGGVDPK,Trypsin,0,17,1,18,NTDEEEGGEIVFGGVDPK,18,intact,GGE
+GGE,NTDEEEGGEIVFGGVDPK,Chymotrypsin,0,11,1,12,NTDEEEGGEIVF,12,intact,GGE
+GGE,NTDEEEGGEIVFGGVDPK,Chymotrypsin,12,17,13,18,GGVDPK,6,none,GGE
+GGE,NTDEEEGGEIVFGGVDPK,Pepsin (pH 2),0,10,1,11,NTDEEEGGEIV,11,intact,GGE
+GGE,NTDEEEGGEIVFGGVDPK,Pepsin (pH 2),11,11,12,12,F,1,none,GGE
+GGE,NTDEEEGGEIVFGGVDPK,Pepsin (pH 2),12,17,13,18,GGVDPK,6,none,GGE
+CME,LYQCMEFVR,Trypsin,0,8,1,9,LYQCMEFVR,9,intact,CME
+CME,LYQCMEFVR,Chymotrypsin,0,0,1,1,L,1,none,CME
+CME,LYQCMEFVR,Chymotrypsin,1,1,2,2,Y,1,none,CME
+CME,LYQCMEFVR,Chymotrypsin,2,4,3,5,QCM,3,partial,CME
+CME,LYQCMEFVR,Chymotrypsin,5,6,6,7,EF,2,partial,CME
+CME,LYQCMEFVR,Chymotrypsin,7,8,8,9,VR,2,none,CME
+CME,LYQCMEFVR,Pepsin (pH 2),0,0,1,1,L,1,none,CME
+CME,LYQCMEFVR,Pepsin (pH 2),1,1,2,2,Y,1,none,CME
+CME,LYQCMEFVR,Pepsin (pH 2),2,5,3,6,QCME,4,intact,CME
+CME,LYQCMEFVR,Pepsin (pH 2),6,6,7,7,F,1,none,CME
+CME,LYQCMEFVR,Pepsin (pH 2),7,8,8,9,VR,2,none,CME
+YIY,NPYIYK,Trypsin,0,5,1,6,NPYIYK,6,intact,YIY
+YIY,NPYIYK,Chymotrypsin,0,2,1,3,NPY,3,partial,YIY
+YIY,NPYIYK,Chymotrypsin,3,4,4,5,IY,2,partial,YIY
+YIY,NPYIYK,Chymotrypsin,5,5,6,6,K,1,none,YIY
+YIY,NPYIYK,Pepsin (pH 2),0,1,1,2,NP,2,none,YIY
+YIY,NPYIYK,Pepsin (pH 2),2,2,3,3,Y,1,partial,YIY
+YIY,NPYIYK,Pepsin (pH 2),3,3,4,4,I,1,partial,YIY
+YIY,NPYIYK,Pepsin (pH 2),4,4,5,5,Y,1,partial,YIY
+YIY,NPYIYK,Pepsin (pH 2),5,5,6,6,K,1,none,YIY

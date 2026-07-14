@@ -1,0 +1,18 @@
+peptide,source_peptide,source_sequence,protease,cleavage_after_pos,cleavage_after_pos_1idx,P1_residue,P1_prime_residue,rule,in_construct,construct_residue_idx,within_motif,adjacent_to_motif
+GGE,Peptide 6,NTDEEEGGEIVFGGVDPK,Chymotrypsin,11,12,F,G,Chymotrypsin (high): C-term to F12,True,8,False,False
+GGE,Peptide 6,NTDEEEGGEIVFGGVDPK,Pepsin (pH 2),10,11,V,F,Pepsin: N-term to F12,True,7,False,False
+GGE,Peptide 6,NTDEEEGGEIVFGGVDPK,Pepsin (pH 2),11,12,F,G,Pepsin: C-term to F12,True,8,False,False
+CME,Peptide 5,LYQCMEFVR,Chymotrypsin,0,1,L,Y,Chymotrypsin (low): C-term to L1,True,0,False,False
+CME,Peptide 5,LYQCMEFVR,Chymotrypsin,1,2,Y,Q,Chymotrypsin (high): C-term to Y2,True,1,False,False
+CME,Peptide 5,LYQCMEFVR,Chymotrypsin,4,5,M,E,Chymotrypsin (low): C-term to M5,True,4,True,True
+CME,Peptide 5,LYQCMEFVR,Chymotrypsin,6,7,F,V,Chymotrypsin (high): C-term to F7,True,6,False,True
+CME,Peptide 5,LYQCMEFVR,Pepsin (pH 2),0,1,L,Y,Pepsin: C-term to L1,True,0,False,False
+CME,Peptide 5,LYQCMEFVR,Pepsin (pH 2),1,2,Y,Q,Pepsin: C-term to Y2,True,1,False,False
+CME,Peptide 5,LYQCMEFVR,Pepsin (pH 2),5,6,E,F,Pepsin: N-term to F7,True,5,True,True
+CME,Peptide 5,LYQCMEFVR,Pepsin (pH 2),6,7,F,V,Pepsin: C-term to F7,True,6,False,True
+YIY,Peptide 83,NPYIYK,Chymotrypsin,2,3,Y,I,Chymotrypsin (high): C-term to Y3,True,2,True,True
+YIY,Peptide 83,NPYIYK,Chymotrypsin,4,5,Y,K,Chymotrypsin (high): C-term to Y5,True,4,True,True
+YIY,Peptide 83,NPYIYK,Pepsin (pH 2),1,2,P,Y,Pepsin: N-term to Y3,True,1,False,True
+YIY,Peptide 83,NPYIYK,Pepsin (pH 2),2,3,Y,I,Pepsin: C-term to Y3,True,2,True,True
+YIY,Peptide 83,NPYIYK,Pepsin (pH 2),3,4,I,Y,Pepsin: N-term to Y5,True,3,True,True
+YIY,Peptide 83,NPYIYK,Pepsin (pH 2),4,5,Y,K,Pepsin: C-term to Y5,True,4,True,True
