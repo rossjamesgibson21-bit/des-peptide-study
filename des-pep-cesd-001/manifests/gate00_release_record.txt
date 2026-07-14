@@ -42,3 +42,22 @@ documentation-only commit.
 
 Signed/tagged evidence integrity is unaffected; this note corrects the
 source-commit label in the permanent git record.
+
+-----------------------------------------------------------------------
+TWO gate-00 TAG TARGETS (expected — read carefully)
+-----------------------------------------------------------------------
+There are TWO repositories, so gate-00 resolves to TWO DIFFERENT commit
+hashes. This is expected and correct, NOT a discrepancy:
+
+  * Standalone dev repo (local audit trail, granular phase-0 history):
+        gate-00 -> e846d1429a6528ccd2c9dc2c386e9b5c3b5fa315
+  * Published repo rossjamesgibson21-bit/des-peptide-study (main, subtree
+    layout des-pep-cesd-001/):
+        gate-00 -> a5be121852c428e1a4d838c39cdaabdfd13f942c
+
+The subdirectory-on-main layout repackages the release as a NEW commit in
+a DIFFERENT history, so the published tag necessarily points at a different
+commit than the dev tag. They are the SAME signed Gate 0 evidence content
+(verified: the published subtree tree == dev release tree); only the commit
+SHAs differ because the histories differ. Verify equivalence by content/
+manifest hashes, never by expecting the two commit SHAs to match.
