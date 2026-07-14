@@ -60,19 +60,20 @@ aggregate_campaign_ceiling:  # Gate 0 reviewer (item: freeze a TOTAL campaign ma
   # single value exceeded requires a signed amendment (deviation DEV + study-lead
   # + relevant reviewer). Values proposed by the analyst; APPROVED by the study lead
   # at Gate 0 sign-off (certificate criterion "Scope options and resource ceiling frozen").
-  approval_status: "PROVISIONAL — study lead elected at Gate 0 (2026-07-14) to release with the ceiling PROVISIONAL; the six values below are NOT yet frozen. Freezing the numeric values is a Phase-1 precondition, not a Gate 0 blocker."
+  approval_status: "APPROVED — all six aggregate-campaign-ceiling values confirmed and frozen by the study lead (Ross Gibson) on 2026-07-14 (DEV-0001 closed). The 25.0 µs enhanced-sampling budget was confirmed explicitly; 9 cells and 54 replicas freeze as structural consequences of the frozen 3×3 panel and 6-replica precision-rule max; the three discretionary guardrails (12 replacements, 8.0 TB, 40 weeks) were confirmed as-is."
   proposed_by: "analyst agent (values derived from Route B worst case + margin)"
-  freeze_precondition: "Explicit study-lead confirmation of the six numeric values (or amended numbers) is REQUIRED before Phase 1 execution. Tracked as an open item in governance/deviation_log.yaml (DEV-0001)."
+  approved_by: "Ross Gibson (study lead)"
+  approved_at: "2026-07-14"
   values:
     # Route B worst case = 3 peptides × 3 solvents × 6 replicas × 400 ns = 21.6 µs.
     # Ceiling set at that worst case + a modest allowance for qualification pilots
     # and re-runs, rounded to a round number.
-    max_aggregate_enhanced_sampling_us: 25.0        # PROVISIONAL; Route B 6-rep/400 ns worst case (21.6 µs) + pilots/margin
-    max_production_cells: 9                          # PROVISIONAL; 3 peptides × 3 solvents (Route B full panel)
-    max_confirmatory_replicas_total: 54             # PROVISIONAL; 9 cells × 6 replicas (precision-rule maximum)
-    max_replacement_runs_total: 12                  # PROVISIONAL; technical-failure replacements before campaign HOLD/amendment
-    max_storage_tb: 8.0                              # PROVISIONAL; sized at the §19.4 2.5× reserve on the 25 µs scenario (refine at Gate 4)
-    max_calendar_weeks_before_amendment: 40         # PROVISIONAL; serial-workstation calendar guardrail before mandatory re-plan
+    max_aggregate_enhanced_sampling_us: 25.0        # FROZEN 2026-07-14; study-lead confirmed explicitly. Route B 6-rep/400 ns worst case (21.6 µs) + pilots/margin
+    max_production_cells: 9                          # FROZEN (structural); 3 peptides × 3 solvents (frozen Route B full panel)
+    max_confirmatory_replicas_total: 54             # FROZEN (structural); 9 cells × 6 replicas (frozen precision-rule maximum)
+    max_replacement_runs_total: 12                  # FROZEN 2026-07-14; study-lead confirmed. Technical-failure replacements before campaign HOLD/amendment
+    max_storage_tb: 8.0                              # FROZEN 2026-07-14; study-lead confirmed. §19.4 2.5× reserve on the 25 µs scenario (Gate 4 may refine for SCHEDULING only)
+    max_calendar_weeks_before_amendment: 40         # FROZEN 2026-07-14; study-lead confirmed. Serial-workstation calendar guardrail before mandatory re-plan
   exceed_rule: >
     Exceeding ANY value above requires a signed amendment (deviation record +
     study-lead approval + relevant reviewer), never a silent extension. The Gate 4

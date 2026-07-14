@@ -86,10 +86,10 @@ deviations:
         decision: "PASS (Gate 0 re-review)"
         date: "2026-07-14"
         signature_reference: "gate00_certificate.yaml (all four criteria PASS)"
-    closure_status: "open — Gate 0 signed PASS 2026-07-14; roles resolved, but the aggregate-ceiling numeric freeze is deferred to Phase 1 (study-lead election)"
-    closure_date: "SIGN: on explicit confirmation of the six ceiling values"
+    closure_status: "closed — 2026-07-14. Gate 0 signed PASS; roles named; all six aggregate-ceiling values confirmed and frozen by the study lead. The firewall separation (dual role) is tracked SEPARATELY as DEV-0002 (open, close before Phase 6)."
+    closure_date: "2026-07-14"
     open_items_requiring_human_decision:
-      - "OPEN (deferred to Phase 1): the six aggregate-campaign-ceiling values remain PROVISIONAL. Study lead elected at Gate 0 to release without freezing them; explicit confirmation of the six numbers (or amended numbers) is a Phase-1 precondition. Criterion 3 PASS covers the ceiling STRUCTURE (routes, per-cell cap, aggregate fields), not the specific numeric maxima."
+      - "RESOLVED (2026-07-14): all six aggregate-campaign-ceiling values confirmed and frozen by the study lead. 25.0 µs enhanced-sampling budget confirmed explicitly; 9 cells + 54 replicas freeze as structural consequences; 12 replacements / 8.0 TB / 40 weeks confirmed as-is. scope_and_resource_ceiling.yaml approval_status = APPROVED."
       - "RESOLVED: data steward + four discipline reviewers named (Ross Gibson, Phase 0 reviewer-of-record). NOTE: the data-steward/study-lead firewall separation is carried forward as DEV-0002 (must close before Phase 6)."
 
   - deviation_id: "DEV-0002"

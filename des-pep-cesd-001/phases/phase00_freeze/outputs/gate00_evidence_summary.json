@@ -2,7 +2,7 @@
   "protocol_id": "DES-PEP-CESD-001",
   "gate": 0,
   "phase": "Phase 0 \u2014 Protocol, estimand and analysis freeze",
-  "generated_utc": "2026-07-14T20:04:29.089727+00:00",
+  "generated_utc": "2026-07-14T20:34:16.977598+00:00",
   "schema_validation": {
     "total": 7,
     "passed": 7,
@@ -34,22 +34,21 @@
   },
   "git_state": {
     "branch": "main",
-    "head_commit": "00331d845faf74eb511f4e1c81d264fca354a82a",
-    "head_short": "00331d8",
+    "head_commit": "8147f04d982a562e3f20a0a0c185ad59123f64e7",
+    "head_short": "8147f04",
     "worktree_clean": false,
     "uncommitted_paths": [
-      "overnance/blinding_charter.yaml",
-      "governance/deviation_log.yaml",
-      "governance/gate_certificates/gate00_certificate.yaml",
-      "governance/roles_and_arrangements.yaml",
+      "overnance/deviation_log.yaml",
       "manifests/gate00_manifest.sha256",
       "phases/phase00_freeze/outputs/scope_and_resource_ceiling.yaml",
       "phases/phase00_freeze/phase00_freeze.ipynb"
     ],
     "upstream": "(git error: Command '['git', '-C', '/Users/rossgibson/.claude-science/orgs/8c1a2248-c6eb-48c2-a279-5c9344656e9e/workspaces/a49568e3-f86c-487c-9df4-dc0587b10efb/des-pep-cesd-001', 'rev-parse', '--abbrev-ref', '--symbolic-full-name', '@{u}']' returned non-zero exit status 128.)",
     "remotes": [],
-    "existing_tags": [],
-    "gate00_tag_present": false
+    "existing_tags": [
+      "gate-00"
+    ],
+    "gate00_tag_present": true
   },
   "gate0_release_matrix": [
     {
