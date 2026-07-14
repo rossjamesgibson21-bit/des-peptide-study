@@ -57,7 +57,20 @@ hashes. This is expected and correct, NOT a discrepancy:
 
 The subdirectory-on-main layout repackages the release as a NEW commit in
 a DIFFERENT history, so the published tag necessarily points at a different
-commit than the dev tag. They are the SAME signed Gate 0 evidence content
-(verified: the published subtree tree == dev release tree); only the commit
-SHAs differ because the histories differ. Verify equivalence by content/
-manifest hashes, never by expecting the two commit SHAs to match.
+commit than the dev tag.
+
+Tree-level relationship (VERIFIED 2026-07-14 by two-sided git tree comparison,
+NOT merely inferred):
+  * dev gate-00 (e846d14) tree            = cae443728ff9db48f9597c305bce349ebf353fbe
+  * published gate-00 subtree (a5be121
+    :des-pep-cesd-001) tree               = b2de6b28c5028009e4e4aed67afc424f9cf4111d
+These two trees are NOT identical. The published subtree tree equals dev commit
+6ee5455 (HEAD-at-publish), which is the tagged release e846d14 PLUS one additive
+file: manifests/gate00_release_record.txt (git diff e846d14..6ee5455 = that file
+only, +27 lines). NO signed evidence artifact (governance, schemas, notebook,
+evidence manifest entries) differs between the two.
+
+So: published gate-00 = signed Gate 0 release + this documentation record file.
+Verify signed-evidence equivalence by the per-artifact SHA-256 entries in
+manifests/gate00_manifest.sha256 (identical on both sides), never by expecting
+the two commit SHAs or the two top-level tree SHAs to match.
