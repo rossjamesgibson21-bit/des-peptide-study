@@ -25,3 +25,20 @@ Open items carried past Gate 0:
 Note: this record is written AFTER tagging and is intentionally NOT part of the
 tagged tree, so the gate-00 target SHA above is immutable and independently
 checkable via:  git rev-list -n 1 gate-00
+
+-----------------------------------------------------------------------
+PROVENANCE CORRECTION (appended post-push)
+-----------------------------------------------------------------------
+The pushed commit and tag messages on des-peptide-study describe the
+published source as "dev target e846d14" (the gate-00 tag's target commit).
+That label is imprecise: the tree published to des-peptide-study was archived
+from dev-repo HEAD 6ee5455, NOT from the tagged commit e846d14.
+
+The ONLY difference between the two is this file itself — commit 6ee5455 adds
+manifests/gate00_release_record.txt on top of the signed release e846d14; no
+governance, evidence, schema, notebook or manifest artifact changed after the
+tag. So the published subtree = signed Gate 0 release e846d14 + this one
+documentation-only commit.
+
+Signed/tagged evidence integrity is unaffected; this note corrects the
+source-commit label in the permanent git record.
