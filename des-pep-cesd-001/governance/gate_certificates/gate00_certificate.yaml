@@ -1,0 +1,51 @@
+# DES-PEP-CESD-001 — GATE 0 CERTIFICATE
+# Phase 0 — Protocol, estimand and analysis freeze (§5 Gate 0 release matrix).
+# Evidence prepared and verified by the analysis environment (50/50 consistency
+# checks PASS). SIGNED PASS by the study lead (Ross Gibson) at Gate 0 on 2026-07-14.
+# The analysis environment does NOT sign gates (§3.1); the dispositions below were
+# entered by the human reviewer and transcribed here verbatim from the signed
+# certificate. Interim role concentration is tracked as DEV-0002 (close before Phase 6).
+
+gate_number: 0
+phase: "Phase 0 — Protocol, estimand and analysis freeze"
+protocol_id: DES-PEP-CESD-001
+evidence_package: "phases/phase00_freeze/outputs/  +  sap/  +  governance/"
+evidence_manifest_sha256: "manifests/gate00_manifest.sha256"
+evidence_summary: "phases/phase00_freeze/outputs/gate00_evidence_summary.json"
+session_verification: "7/7 schema validations PASS; 50/50 consistency checks PASS; 6/6 resource scenarios internally valid; read-back 20/20 hashes match disk; all Gate 0 evidence ready for review. Incorporates corrective actions from the first Gate 0 review (HOLD): earlier internal fixes (items 1-7) plus reviewer-requested fixes recorded as DEV-0001 (estimand hierarchy, outcome-class interval logic, Route B peptide-specific qualification, aggregate campaign ceiling [PROVISIONAL], vendor-neutral roles, full-trajectory QC, operational key custody, expanded deviation template)."
+
+criteria:  # §5 Gate 0 release matrix — Every criterion signed PASS before release.
+  - criterion: "Question and estimands unambiguous"
+    required_evidence: "phases/phase00_freeze/outputs/question_estimand_registry.yaml"
+    reviewer_role: "Study lead + statistical reviewer"
+    disposition: "PASS"
+    reviewer_signature: "Ross Gibson"
+    date: "2026-07-14"
+  - criterion: "Blinding responsibilities assigned"
+    required_evidence: "governance/blinding_charter.yaml; governance/roles_and_arrangements.yaml (data-steward record + key location)"
+    reviewer_role: "Data steward"
+    disposition: "PASS"
+    reviewer_signature: "Ross Gibson (interim data steward, Phase 0 — see DEV-0002)"
+    date: "2026-07-14"
+  - criterion: "Scope options and resource ceiling frozen"
+    required_evidence: "phases/phase00_freeze/outputs/scope_and_resource_ceiling.yaml (Route A/B decision sheet + compute cap)"
+    reviewer_role: "Study lead"
+    disposition: "PASS"
+    reviewer_signature: "Ross Gibson"
+    scope_note: "PASS covers the ceiling STRUCTURE (Route A/B decision sheet, per-cell compute cap, aggregate-ceiling fields). The six AGGREGATE numeric maxima remain PROVISIONAL by study-lead election; freezing those values is a Phase-1 precondition (DEV-0001, open)."
+    date: "2026-07-14"
+  - criterion: "Change control operational"
+    required_evidence: "governance/deviation_log_template.yaml; governance/gate_certificate_template.yaml; repository tag"
+    reviewer_role: "Data steward"
+    disposition: "PASS"
+    reviewer_signature: "Ross Gibson (interim data steward, Phase 0 — see DEV-0002)"
+    date: "2026-07-14"
+
+overall_disposition: "PASS"
+git_tag: "gate-00"                          # applied at release (§18.2)
+git_commit: "recorded at annotated tag gate-00 (exact target SHA in manifests/gate00_release_record.txt, verified post-tag)"
+notes: >
+  Gate 0: Every criterion is signed PASS before release. HOLD requires documented
+  corrective action and repeat review. FAIL stops downstream work; failed material
+  remains in the audit trail. Phase 1 execution is NOT authorised until this
+  certificate is signed PASS overall.

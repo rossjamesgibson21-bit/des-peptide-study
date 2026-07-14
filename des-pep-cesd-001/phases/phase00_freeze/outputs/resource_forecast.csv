@@ -1,0 +1,7 @@
+scenario,nominal_us,raw_serial_days,planning_days_with_overhead,internally_valid
+GGE 50 ns pilot: 3 replicas × 3 solvents,0.45,3–8,4–10,OK
+GGE pilot plus one larger-box sensitivity,0.5,3–9,4–12,OK
+"Route A: GGE, 4 replicas × 3 solvents × 200 ns",2.4,15–40,18–50,OK
+Route A precision increase: 6 replicas,3.6,23–60,28–75,OK
+Route B: 3 peptides × 3 solvents × 4 replicas × 200 ns,7.2,45–120,54–150,OK
+Route B precision increase: 6 replicas,10.8,68–180,82–225,OK

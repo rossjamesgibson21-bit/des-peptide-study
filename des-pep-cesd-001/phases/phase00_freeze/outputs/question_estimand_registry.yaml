@@ -1,0 +1,163 @@
+# DES-PEP-CESD-001 — Question & estimand registry (IMMUTABLE)
+# Phase 0 output (§5, task 2). This is the signed source of truth for what the
+# study asks and what it will report. Any change is a dated amendment (§Document
+# control) with an explicit confirmatory-status determination.
+
+protocol_id: DES-PEP-CESD-001
+registry_version: 1.0
+frozen_at_gate: 0
+
+primary_question:  # §2.1
+  text: >
+    Under validated molecular models, do water, 20 wt% aqueous reline and
+    20 wt% aqueous glyceline produce reproducibly different equilibrium
+    conformational landscapes for the selected capped Torreya grandis peptide
+    motifs?
+
+primary_estimand:  # §2.3
+  quantity: "ΔG(open − compact)"
+  sign_convention: >
+    FROZEN: positive ΔG(open − compact) means the OPEN basin is LESS favourable
+    than the COMPACT basin.
+  # --- Three-level estimand hierarchy (Gate 0 reviewer clarification, item 1) ---
+  # A single replica is NOT the scientific target. Replicas ESTIMATE the
+  # cell-level free-energy balance and its uncertainty; the scientific claim is
+  # made at the contrast level. The hierarchy is made explicit so the SAP models
+  # between-replica heterogeneity rather than treating one replica as the estimand.
+  estimand_hierarchy:
+    run_level_observation:
+      level: "observation (not the estimand)"
+      definition: >
+        Reweighted estimate of ΔG(open − compact) from ONE converged, independent
+        enhanced-sampling replica. This is a noisy observation of the cell-level
+        quantity, not the scientific target.
+      inferential_unit: >
+        An independently built, equilibrated and biased replica with its own
+        packing, velocity seed and bias history. Saved frames, hills and
+        multiple-walker shared-bias runs are NOT independent replicates (§2.5).
+    cell_level_estimand:
+      level: "PRIMARY estimand (per peptide-solvent cell)"
+      definition: >
+        Mean ΔG(open − compact) for one peptide-solvent cell, accounting for
+        starting block and between-replica heterogeneity across the independent
+        replicas of that cell.
+    primary_contrast_estimand:
+      level: "primary CONTRAST estimand (cell/population level)"
+      definition: >
+        ΔΔG = ΔG_reline − ΔG_water evaluated at the cell/population level. This is
+        the quantity the primary claim is made about (see contrasts.primary).
+  legacy_note: >
+    Earlier drafts called the per-replica estimate the 'primary estimand'; this
+    is superseded by the three-level hierarchy above (run observation ->
+    cell estimand -> contrast estimand).
+
+contrasts:  # §2.3
+  primary:
+    id: CON-PRIMARY
+    expression: "ΔΔG = ΔG_reline − ΔG_water"
+    role: "Primary solvent contrast"
+  specificity:
+    - id: CON-SPEC-1
+      expression: "ΔG_glyceline − ΔG_water"
+      role: "Prespecified specificity contrast"
+    - id: CON-SPEC-2
+      expression: "ΔG_reline − ΔG_glyceline"
+      role: "Prespecified specificity contrast"
+
+basin_definitions:  # §2.3, §10.3 — principle frozen here; geometric detail frozen at Phase 5
+  principle: >
+    Basins use FROZEN geometric criteria, identical across solvents for a given
+    peptide. Definitions use the biased CVs plus at least one orthogonal
+    descriptor and are frozen BEFORE solvent unblinding (§10.3).
+  detailed_criteria_frozen_at: "Phase 5 (Gate 5)"
+  revision_rule: >
+    If the FES does not support two stable basins, the estimand is revised ONLY
+    by a blinded amendment; affected pilot runs cannot silently become
+    confirmatory (§2.3).
+  # Strengthened per Gate 0 reviewer (item 4): explicit conditions on any
+  # two-basin estimand revision.
+  revision_conditions:
+    - "The amendment is made while still solvent-BLINDED."
+    - "Affected pilot data remain DEVELOPMENTAL (never silently confirmatory)."
+    - "New CONFIRMATORY trajectories must be produced under the revised definition."
+    - >
+      The revised estimand CANNOT be selected on the basis that it yields a
+      clearer or larger solvent effect (prohibited selection basis, §12.1).
+
+secondary_endpoints:  # §2.4 — each reduced to ONE run-level summary per replica (§16.1)
+  - "Reweighted open-basin probability"
+  - "Motif SASA distribution (reweighted endpoint unless qualified as a CV at Phase 5)"
+  - "Reweighted radius of gyration"
+  - "End-to-end distance"
+  - "Backbone hydrogen bonds"
+  - "Conformational-state occupancy"
+  - "Chemically resolved hydration and choline/chloride/urea/glycerol coordination (matched atom definitions)"
+  # NOTE: bias-independent short release trajectories were RECLASSIFIED from a
+  # secondary endpoint to a sensitivity analysis (Gate 0 reviewer, item 4). See
+  # sensitivity_analyses below. The reportable endpoint is the stability/relaxation
+  # MEASURE those trajectories produce, not the trajectories themselves.
+
+sensitivity_analyses:  # §2.4 / §16 — not primary or secondary endpoints
+  - id: SENS-RELEASE
+    description: >
+      Bias-independent short release ("unbiased sentinel") trajectories launched
+      from reweighted basin representatives.
+    reported_measure: >
+      Basin stability / relaxation measure (e.g. basin residence or committor-style
+      relaxation over the release window); the endpoint is this measure, not the
+      raw trajectory.
+    role: "Kinetic/stability sensitivity check on the equilibrium basin definition"
+
+claim_hierarchy:  # §16.4 outcome classes — the ONLY permitted output classifications
+  # Interval logic tightened per Gate 0 reviewer (item 2). "Interval" = the
+  # SIMULTANEOUS confidence/credible interval for the contrast (exact type and
+  # level are a Gate 7 SAP decision); "meaningful margin" = the prespecified
+  # meaningful-effect margin (SAP: meaningful_margin_kJ_per_mol). The logical
+  # classification below is unambiguous and frozen now.
+  - class: "Confirmed solvent shift"
+    evidence: >
+      All gates pass AND the entire simultaneous interval lies BEYOND the
+      prespecified meaningful-effect margin in the claimed direction.
+    wording: "Solvent shifts the modelled basin free-energy balance"
+  - class: "Small directional shift"
+    evidence: >
+      The simultaneous interval excludes zero but OVERLAPS or remains WITHIN the
+      meaningful-effect region (does not lie wholly beyond the margin).
+    wording: "Direction supported; practical magnitude uncertain/small"
+  - class: "Equivalent within margin"
+    evidence: >
+      The entire prespecified equivalence interval lies INSIDE ± the
+      meaningful-effect margin.
+    wording: "Practically equivalent under the specified model"
+  - class: "Inconclusive"
+    evidence: >
+      The interval overlaps BOTH the negligible and the meaningful regions, OR
+      the convergence/reweighting gate fails.
+    wording: "Study does not resolve the solvent contrast"
+  - class: "Not supported / opposite"
+    evidence: >
+      The interval excludes the proposed direction or magnitude (lies wholly in
+      the opposite direction, or wholly within negligible bounds against a
+      directional claim).
+    wording: "Legacy-informed hypothesis not supported"
+
+interpretation_boundary:  # §2.6 — hard claim boundary
+  may_establish: >
+    Solvent-associated shifts in MODELLED peptide free-energy landscapes.
+  does_not_establish: >
+    Enzyme kinetics, peptide release from intact proteins, extraction yield,
+    antioxidant potency, biological activity, or causality of an individual
+    DES component — none of these follow from SASA or cluster energies alone
+    (§1.2, §2.6).
+
+success_condition:  # §1.2
+  text: >
+    A valid negative or inconclusive solvent comparison is a SUCCESSFUL outcome.
+    The campaign fails only when the molecular model, sampling, reweighting,
+    reproducibility or provenance chain cannot support the prespecified inference.
+
+legacy_data_status:  # §3
+  text: >
+    Legacy trajectories are physically NON-CONFIRMATORY: development and
+    hypothesis-generation only; never pooled with corrected estimates or used to
+    tune confirmatory decisions. Segregated from all corrected datasets.

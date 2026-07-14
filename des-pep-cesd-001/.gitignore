@@ -1,0 +1,18 @@
+# §18.2 large-file policy: multi-GB trajectories NEVER in ordinary Git.
+# Store under a checksummed archival manifest with >=2 physical copies.
+*.dcd
+*.xtc
+*.trr
+*.h5
+*.nc
+trajectories/*/*.bin
+# checkpoints (kept under archival manifest, not Git)
+*.chk
+*.rst
+# python noise
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# sandbox-local Jupyter/HOME scratch (execution only, not deliverables)
+.home/
+.jupyter/

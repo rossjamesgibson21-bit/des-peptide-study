@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "des-pep-cesd-001/question_estimand_registry",
+  "title": "DES-PEP-CESD-001 question & estimand registry",
+  "type": "object",
+  "required": ["protocol_id", "registry_version", "frozen_at_gate",
+               "primary_question", "primary_estimand", "contrasts",
+               "basin_definitions", "secondary_endpoints", "sensitivity_analyses",
+               "claim_hierarchy", "interpretation_boundary", "success_condition",
+               "legacy_data_status"],
+  "additionalProperties": true,
+  "properties": {
+    "protocol_id": {"const": "DES-PEP-CESD-001"},
+    "frozen_at_gate": {"const": 0},
+    "primary_question": {
+      "type": "object", "required": ["text"],
+      "properties": {"text": {"type": "string", "minLength": 20}}
+    },
+    "primary_estimand": {
+      "type": "object",
+      "required": ["quantity", "sign_convention", "estimand_hierarchy"],
+      "properties": {
+        "sign_convention": {"type": "string",
+          "description": "positive dG(open-compact) = open basin less favourable",
+          "pattern": "(?is)positive.*less\\s+favou?rable"},
+        "estimand_hierarchy": {
+          "type": "object",
+          "description": "three-level hierarchy (Gate 0 reviewer item 1)",
+          "required": ["run_level_observation", "cell_level_estimand", "primary_contrast_estimand"],
+          "properties": {
+            "run_level_observation": {"type": "object", "required": ["level", "definition", "inferential_unit"]},
+            "cell_level_estimand": {"type": "object", "required": ["level", "definition"]},
+            "primary_contrast_estimand": {"type": "object", "required": ["level", "definition"]}
+          }
+        }
+      }
+    },
+    "sensitivity_analyses": {
+      "type": "array", "minItems": 1,
+      "items": {"type": "object", "required": ["id", "description", "reported_measure", "role"]}
+    },
+    "contrasts": {
+      "type": "object",
+      "required": ["primary", "specificity"],
+      "properties": {
+        "primary": {
+          "type": "object", "required": ["id", "expression", "role"],
+          "properties": {
+            "expression": {"type": "string",
+              "description": "primary contrast is reline - water",
+              "pattern": "(?i)reline.*water"}
+          }
+        },
+        "specificity": {"type": "array", "minItems": 2, "maxItems": 2,
+          "items": {"type": "object", "required": ["id", "expression", "role"]}}
+      }
+    },
+    "basin_definitions": {
+      "type": "object",
+      "required": ["principle", "detailed_criteria_frozen_at", "revision_rule", "revision_conditions"],
+      "properties": {
+        "revision_conditions": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      }
+    },
+    "secondary_endpoints": {"type": "array", "minItems": 1,
+                            "items": {"type": "string"}},
+    "claim_hierarchy": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["class", "evidence", "wording"],
+        "properties": {
+          "class": {"type": "string",
+            "enum": ["Confirmed solvent shift", "Small directional shift",
+                     "Equivalent within margin", "Inconclusive",
+                     "Not supported / opposite"]}
+        }
+      }
+    },
+    "interpretation_boundary": {
+      "type": "object",
+      "required": ["may_establish", "does_not_establish"]
+    },
+    "success_condition": {
+      "type": "object", "required": ["text"],
+      "properties": {"text": {"type": "string",
+        "description": "a valid negative/inconclusive comparison is a success",
+        "pattern": "(?is)(negative|inconclusive).*success"}}
+    },
+    "legacy_data_status": {
+      "type": "object", "required": ["text"],
+      "properties": {"text": {"type": "string",
+        "pattern": "(?is)non-?confirmatory"}}
+    }
+  }
+}

@@ -1,0 +1,67 @@
+# DES-PEP-CESD-001 — Statistical Analysis Plan (SHELL)
+# Phase 0 output (§5, task 5). This is the DRAFT SAP shell. The FINAL SAP is
+# frozen at Gate 7 BEFORE unblinding (§12.2). Items marked SIGN: require a
+# reviewer-supplied value and are intentionally NOT pre-filled here — fabricating
+# a threshold the protocol leaves open would violate the freeze discipline.
+
+protocol_id: DES-PEP-CESD-001
+sap_status: "SHELL (draft) — final freeze at Gate 7 (§12.2)"
+sap_version: 0.1
+frozen_at_gate: 0
+final_freeze_gate: 7
+
+within_replica_estimate:  # §16.1
+  quantity: "ΔG(open − compact) per replica"
+  uncertainty: "Block-based numerical uncertainty using the frozen reweighting/window specification"
+  reweighting_estimator: "Well-tempered reweighting (Tiwary–Parrinello); exact estimator, equilibration removal, block length and numerical stabilisation frozen at Phase 5 (§10.3)"
+  secondary_reduction: "Each secondary observable reduced to ONE prespecified run-level summary per replica; frames NEVER treated as independent replication (§16.1)"
+
+across_replica_primary_model:  # §16.2 — measurement-error model
+  structure: >
+    Observed run-level ΔG modelled around a solvent mean PLUS the prespecified
+    starting-conformer block effect, with known/estimated within-run uncertainty
+    and between-replica heterogeneity.
+  implementation: "SIGN: frequentist OR Bayesian — exact implementation, priors/degrees-of-freedom method and diagnostics frozen at Gate 7 before unblinding"
+  alternatives_are: "Sensitivity analyses only — NOT selectable routes (§16.2)"
+  primary_report: "reline − water (CON-PRIMARY), with simultaneous intervals for glyceline−water and reline−glyceline"
+
+multiplicity:  # §16.2
+  family: "SIGN: multiplicity family — frozen at Gate 7"
+  route_b_strategy: "Frozen hierarchical or fixed-sequence strategy across peptides if Route B; no post-hoc global-claim redefinition after viewing peptide-specific results"
+
+equivalence:  # §16.2, §16.4
+  principle: "A non-significant contrast is NOT evidence of equivalence. Equivalence requires the ENTIRE frozen interval within a scientifically justified margin."
+  meaningful_margin_kJ_per_mol: "SIGN: scientifically justified margin (kJ/mol) — frozen at Gate 7 by statistical + molecular-model reviewers"
+  margin_process: "Margin justified from mechanistic relevance, NOT from observed effect size; set before unblinding"
+
+heterogeneity_and_sensitivity:  # §16.2
+  report: ["between-replica heterogeneity", "prediction intervals where meaningful"]
+  sensitivity_analyses:
+    - "leave-one-replica-out"
+    - "leave-one-start-block-out"
+    - "reweighting block/window sensitivity"
+    - "larger-box sensitivity (primary contrast direction & material interpretation unchanged, §14.2)"
+
+missing_and_failure_rules:  # §12.2, §13.2
+  technical_failure_replacement: "Replaced under the ledger rule with a NEW run id; original remains in ledger (§13.2)"
+  technical_failure_definition: >
+    Corrupt/incomplete trajectory, unrecoverable checkpoint, verified
+    software/hardware fault, topology mismatch, periodic-image FAIL,
+    NaN/constraint failure, or protocol deviation affecting validity.
+  NOT_a_technical_failure: "Slow convergence, an unexpected state, or an extreme valid effect (§13.2)"
+  scientifically_unusual_but_valid: "Remain INCLUDED (§12.2)"
+
+pilot_data_status:  # §12.2
+  declaration: "SIGN: at Gate 7 — whether developmental pilot data are excluded or incorporated. Incorporation allowed ONLY if generated under the unchanged final protocol and specified before unblinding."
+
+md_dft_integration:  # §16.3
+  rule: "DFT descriptors interpreted as supporting/contradicting a prespecified interaction hypothesis; NOT multiplied into a composite 'mechanism score'"
+  multivariate: "No confirmatory PCA/PLS/regression unless independently powered and preregistered; with a small cluster panel, multivariate displays remain descriptive"
+  causal_language: "Requires a matched perturbation or energetic decomposition able to distinguish urea, glycerol, choline, chloride and bulk-solvent effects"
+
+convergence_criteria_reference:  # §14.2 — frozen defaults; final confirm at Gate 7
+  basin_transitions: ">=20 bidirectional per released replica by final checkpoint"
+  dG_stability_kJ_per_mol: "<1 across each of the final three equal blocks"
+  fes_stability_kJ_per_mol: "RMS <1 over region containing 95% reweighted probability"
+  reweighting_ess: "total ESS >=500 AND basin ESS >=100; max single weight <2%"
+  replica_agreement: "No unresolved start-block pattern; heterogeneity compatible with frozen model"

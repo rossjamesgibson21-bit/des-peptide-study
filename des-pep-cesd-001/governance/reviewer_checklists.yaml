@@ -1,0 +1,53 @@
+# DES-PEP-CESD-001 — Reviewer checklists (§20)
+# Gate 0 review checklist plus the reusable per-build and per-segment checklists
+# (§20.1, §20.2) carried forward for later phases. Reviewers mark PASS/HOLD/FAIL.
+
+protocol_id: DES-PEP-CESD-001
+
+gate0_review_checklist:  # §5 Gate 0 release matrix
+  - criterion: "Question and estimands unambiguous"
+    required_evidence: "phases/phase00_freeze/outputs/question_estimand_registry.yaml"
+    reviewer_role: "Study lead + statistical reviewer"
+    disposition: "PASS / HOLD / FAIL"
+  - criterion: "Blinding responsibilities assigned"
+    required_evidence: "governance/blinding_charter.yaml; governance/roles_and_arrangements.yaml (data-steward record + key location)"
+    reviewer_role: "Data steward"
+    disposition: "PASS / HOLD / FAIL"
+  - criterion: "Scope options and resource ceiling frozen"
+    required_evidence: "phases/phase00_freeze/outputs/scope_and_resource_ceiling.yaml (Route A/B decision sheet + compute cap)"
+    reviewer_role: "Study lead"
+    disposition: "PASS / HOLD / FAIL"
+  - criterion: "Change control operational"
+    required_evidence: "governance/deviation_log_template.yaml; governance/gate_certificate_template.yaml; repository tag"
+    reviewer_role: "Data steward"
+    disposition: "PASS / HOLD / FAIL"
+
+per_build_release_checklist:  # §20.1 — used from Phase 3 onward
+  - "Correct model ID and approved parameter/charge files"
+  - "Exact total charge, component counts, ion counts and mass fraction"
+  - "Correct peptide sequence, caps, stereochemistry and protonation"
+  - "Unique packing and reserved simulation/bias seeds"
+  - "Exact cell matrix and initial peptide-image distance >=2.0 nm"
+  - "No missing parameters, duplicate atoms or cross-boundary clashes"
+  - "Topology/coordinate order and serialized System settings verified"
+  - "Hashes written to immutable preparation registry"
+
+per_segment_checklist:  # §20.2 — used from Phase 4 onward
+  - "Authenticated checkpoint and expected preceding hash"
+  - "Expected/observed frame and hill counts agree"
+  - "Temperature, energy, volume/density and constraints acceptable"
+  - "All-saved-frame periodic-image audit complete"
+  - "CV ranges, bias continuity and deposition schedule correct"
+  - "Trajectory/bias/checkpoint hashes recorded"
+  - "Disk reserve and thermal/throughput status acceptable"
+  - "Segment disposition and next authorised action signed"
+
+convergence_unblinding_checklist:  # §20.3 — used at Phase 9 / unblinding
+  - "Every candidate replica has a QC certificate"
+  - "Frozen convergence, transition, ESS and FES criteria evaluated"
+  - "Larger-box sensitivity evaluated"
+  - "Run-level dataset and schema hashed"
+  - "Failed/replaced/inconclusive run ledger complete"
+  - "DFT panel frozen before final solvent unblinding"
+  - "SAP implementation/version independently reviewed"
+  - "Data-steward unblinding record signed once"

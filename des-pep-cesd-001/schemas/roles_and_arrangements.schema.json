@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "des-pep-cesd-001/roles_and_arrangements",
+  "title": "DES-PEP-CESD-001 roles & arrangements",
+  "type": "object",
+  "required": ["protocol_id", "frozen_at_gate", "controlled_roles",
+               "campaign_arrangements", "release_workflow", "agent_boundary"],
+  "additionalProperties": true,
+  "properties": {
+    "protocol_id": {"const": "DES-PEP-CESD-001"},
+    "frozen_at_gate": {"const": 0},
+    "controlled_roles": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["role", "name", "authority", "cannot_approve_alone"],
+        "properties": {
+          "role": {"type": "string",
+            "enum": ["Study lead", "Molecular-model reviewer",
+                     "Enhanced-sampling reviewer", "Statistical reviewer",
+                     "Quantum-chemistry reviewer", "Data steward"]},
+          "name": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "campaign_arrangements": {
+      "type": "object",
+      "required": ["compute_arrangement", "governance_arrangement"],
+      "properties": {
+        "compute_arrangement": {"type": "object", "required": ["decision", "rationale"]},
+        "governance_arrangement": {"type": "object", "required": ["decision", "rationale"]}
+      }
+    },
+    "release_workflow": {
+      "type": "object",
+      "required": ["per_phase", "commit_policy", "sequencing"],
+      "properties": {
+        "commit_policy": {"type": "string",
+          "description": "push + tag only after reviewers sign PASS",
+          "pattern": "(?is)only after.*sign"}
+      }
+    },
+    "agent_boundary": {
+      "type": "object",
+      "required": ["will", "will_not"],
+      "properties": {
+        "will": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "will_not": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+      }
+    }
+  }
+}

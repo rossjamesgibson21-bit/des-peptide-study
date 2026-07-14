@@ -1,0 +1,2 @@
+# Pair every notebook with a percent-format .py for reviewable diffs (§18.2).
+formats = "ipynb,py:percent"

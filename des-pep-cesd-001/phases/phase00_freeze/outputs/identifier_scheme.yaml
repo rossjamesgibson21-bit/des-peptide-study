@@ -1,0 +1,92 @@
+# DES-PEP-CESD-001 — Immutable identifier scheme
+# Phase 0 output (§5, task 1). Frozen at Gate 0; extended only by dated amendment.
+# Purpose: assign stable identifiers to every peptide, solvent, start block,
+# preparation, replica and model version, so that every downstream artifact,
+# ledger row and manifest references a controlled, unambiguous token.
+
+protocol_id: DES-PEP-CESD-001
+scheme_version: 1.0
+frozen_at_gate: 0
+notes: >
+  Identifiers are opaque, stable and never reused. A replaced run keeps a NEW
+  identifier (§13.2); the superseded id remains in the ledger. Filenames and
+  directory paths used in blinded phases must reference the MASKED arm code,
+  never the true solvent id (§18.3).
+
+peptides:
+  # Capped Torreya grandis motifs (§2.1). One-letter expansion shown is the
+  # PRESUMED construct; sequence, caps, residue numbering, stereochemistry and
+  # formal charge are verified INDEPENDENTLY of legacy topologies at Phase 1
+  # (§6.1) before the chemistry manifest is released. Listed here for id only.
+  - id: PEP-GGE
+    code: GGE
+    presumed_sequence: "Gly-Gly-Glu"     # provisional; confirm at Phase 1
+    role: "Technical pilot + confirmatory core; most highly charged stress-test peptide (§2.2)"
+  - id: PEP-CME
+    code: CME
+    presumed_sequence: "Cys-Met-Glu"     # provisional; confirm at Phase 1
+    role: "Confirmatory core ONLY if Route B authorised at Gate 7 (§2.2, §12.1)"
+  - id: PEP-YIY
+    code: YIY
+    presumed_sequence: "Tyr-Ile-Tyr"     # provisional; confirm at Phase 1
+    role: "Confirmatory core ONLY if Route B authorised at Gate 7 (§2.2, §12.1)"
+
+caps:
+  # Capped construct convention (§6.1). Exact cap chemistry confirmed at Phase 1.
+  n_terminus: "ACE (acetyl)"             # provisional; confirm at Phase 1
+  c_terminus: "NME (N-methylamide)"      # provisional; confirm at Phase 1
+
+solvents:
+  # TRUE solvent identities. Held by the data steward. During technical review
+  # (Phases 6–9) analysts see only the masked arm code, never these ids (§3, §18.3).
+  - id: SOL-WAT
+    code: WATER
+    description: "Water (reference solvent for primary contrast)"
+  - id: SOL-REL
+    code: RELINE
+    description: "20 wt% aqueous reline (choline chloride : urea, 1:2)"
+  - id: SOL-GLY
+    code: GLYCELINE
+    description: "20 wt% aqueous glyceline (choline chloride : glycerol, 1:2)"
+
+masked_arms:
+  # The masked-arm -> true-solvent mapping is created and held by the DATA STEWARD
+  # (§3.1, §18.3) in a SEPARATE key artifact inaccessible to analysts. Phase 0
+  # only reserves the arm-code namespace; the mapping itself is NOT recorded here.
+  namespace: ["ARM-A", "ARM-B", "ARM-C"]
+  key_owner_role: "Data steward"
+  key_location: "governance/solvent_code_key.SEALED (steward custody; not in analyst-readable tree)"
+  mapping_status: "TO BE ASSIGNED BY DATA STEWARD before Phase 6 (§11)"
+
+start_blocks:
+  # Starting-conformer strata defined WITHOUT solvent-effect outcomes (§8.1).
+  # Same block identities are matched across solvents; each cell is still packed
+  # and equilibrated independently (§2.5).
+  - id: SB-C
+    code: compact
+  - id: SB-I
+    code: intermediate
+  - id: SB-E
+    code: extended
+
+model_versions:
+  # A new model version is minted on ANY parameter/charge change; a DFT-informed
+  # change restarts Phases 1–4 (§3, §6.3). v1 is the initial release candidate.
+  versions:
+    - id: MODEL-v1
+      status: "release candidate — pending Gate 1"
+  version_bump_rule: "Any material post-freeze parameter change => new MODEL-vN and requalification from Phase 1 (§3, §14.3 RESTART)"
+
+id_templates:
+  # Composed identifiers used by build, run and QC ledgers.
+  preparation: "PREP-<peptide>-<arm>-<startblock>-<NN>"   # independently packed cell (§2.5, §8.1)
+  replica:     "REP-<preparation>-s<SEED>"                 # independent bias history = inferential unit (§2.5)
+  run:         "RUN-<NNNN>"                                # immutable run id; never reused (§3, §13.2)
+  trajectory:  "TRJ-<run>-seg<NN>"                         # per-segment trajectory (§13.1)
+  dft_cluster: "DFT-<NN>"                                  # frozen cluster-panel member (§15.2)
+
+seed_policy:
+  # Unique packing, velocity, thermostat/barostat and bias seeds reserved and
+  # recorded per build (§8.3, §20.1). Reserved at build time, logged in the run registry.
+  reserved_at: "Phase 3 build (§8.3)"
+  recorded_in: "runs/run_registry.csv"

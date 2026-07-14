@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "des-pep-cesd-001/SAP_shell",
+  "title": "DES-PEP-CESD-001 SAP shell",
+  "type": "object",
+  "required": ["protocol_id", "sap_status", "sap_version", "frozen_at_gate",
+               "final_freeze_gate", "within_replica_estimate",
+               "across_replica_primary_model", "multiplicity", "equivalence",
+               "heterogeneity_and_sensitivity", "missing_and_failure_rules",
+               "pilot_data_status", "md_dft_integration",
+               "convergence_criteria_reference"],
+  "additionalProperties": true,
+  "properties": {
+    "protocol_id": {"const": "DES-PEP-CESD-001"},
+    "frozen_at_gate": {"const": 0},
+    "final_freeze_gate": {"const": 7},
+    "across_replica_primary_model": {
+      "type": "object",
+      "required": ["structure", "implementation", "alternatives_are", "primary_report"],
+      "properties": {
+        "implementation": {"type": "string",
+          "description": "reviewer-judgment item — must remain a SIGN: placeholder, not fabricated",
+          "pattern": "^SIGN:"}
+      }
+    },
+    "equivalence": {
+      "type": "object",
+      "required": ["principle", "meaningful_margin_kJ_per_mol", "margin_process"],
+      "properties": {
+        "meaningful_margin_kJ_per_mol": {
+          "description": "reviewer-judgment item — must remain a SIGN: placeholder",
+          "type": ["string", "number"],
+          "pattern": "^SIGN:"
+        }
+      }
+    },
+    "multiplicity": {
+      "type": "object", "required": ["family", "route_b_strategy"],
+      "properties": {"family": {"type": "string", "pattern": "^SIGN:"}}
+    },
+    "pilot_data_status": {
+      "type": "object", "required": ["declaration"],
+      "properties": {"declaration": {"type": "string", "pattern": "^SIGN:"}}
+    },
+    "within_replica_estimate": {"type": "object",
+      "required": ["quantity", "uncertainty", "reweighting_estimator", "secondary_reduction"]},
+    "heterogeneity_and_sensitivity": {"type": "object",
+      "required": ["report", "sensitivity_analyses"]},
+    "missing_and_failure_rules": {"type": "object",
+      "required": ["technical_failure_replacement", "technical_failure_definition",
+                   "NOT_a_technical_failure", "scientifically_unusual_but_valid"]},
+    "md_dft_integration": {"type": "object",
+      "required": ["rule", "multivariate", "causal_language"]},
+    "convergence_criteria_reference": {"type": "object",
+      "required": ["basin_transitions", "dG_stability_kJ_per_mol",
+                   "fes_stability_kJ_per_mol", "reweighting_ess", "replica_agreement"]}
+  }
+}

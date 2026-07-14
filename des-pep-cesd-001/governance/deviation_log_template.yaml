@@ -1,0 +1,73 @@
+# DES-PEP-CESD-001 — Deviation record template (§20.4)
+# Copy one block per deviation into governance/deviation_log.yaml. Undocumented
+# manual rescue is prohibited (§3); every material deviation is reviewed BEFORE
+# further execution.
+
+deviation_record_template:
+  # Expanded per Gate 0 reviewer (item 7): full provenance + decision structure
+  # for a professional audit trail. Copy one block per deviation.
+  deviation_id: "DEV-<NNNN>"
+  protocol_version: "e.g. DES-PEP-CESD-001 v1.0"
+  model_version: "e.g. MODEL-v1"
+  phase: "Phase NN"
+  gate: "Gate NN (if gate-relevant)"
+  detected_at: "YYYY-MM-DDThh:mm:ssZ"
+  detected_by: "person OR automated check that detected it"
+  # --- what happened ---
+  description: "What happened"
+  detection_method: "How it was detected (manual review / which automated check)"
+  affected:
+    systems: ["model/system IDs"]
+    runs: ["run IDs"]
+    segments: ["segment IDs"]
+    derived_outputs: ["analysis/artifact IDs affected"]
+  # --- assessment ---
+  severity_materiality: "negligible | minor | major | critical"
+  scientific_statistical_impact: "Impact on estimand, sampling, reweighting or claims"
+  immediate_containment_action: "What was done at once to contain it"
+  execution_paused: "yes | no — was execution halted pending review?"
+  related_systems_inspected: "yes | no — were sibling systems/runs checked for the same issue?"
+  root_cause_assessment: "Root cause (or 'under investigation')"
+  # --- evidence ---
+  evidence_paths_and_hashes:
+    - path: "path/to/evidence"
+      sha256: "…"
+  # --- actions ---
+  corrective_action: "What was done to fix this instance"
+  preventive_action: "What was changed to stop recurrence"
+  rerun_replacement_decision: "authorised rerun/replacement? by whom?"
+  original_run_id: "run ID of the original (if replaced)"
+  replacement_run_id: "run ID of the replacement (if any)"
+  # Gate 0 reviewer: replacement NEVER deletes/overwrites the original.
+  replacement_rule: >
+    Replacement NEVER deletes or overwrites the original run. Both remain in the
+    ledger with a documented relationship (original_run_id <-> replacement_run_id).
+  confirmatory_status_determination: "see data_status controlled vocabulary below"
+  downstream_analyses_requiring_regeneration: ["analysis IDs to re-run"]
+  # --- controlled dispositions (data_status) ---
+  data_status: "no_impact | confirmatory_retained | confirmatory_with_sensitivity | developmental | invalid | replaced_for_technical_failure | campaign_hold | model_version_restart"
+  # --- structured reviews (one block per reviewer; NOT a single signature string) ---
+  reviews:
+    - role: "e.g. Enhanced-sampling reviewer"
+      name: "SIGN: name"
+      decision: "PASS | HOLD | FAIL | ACKNOWLEDGE"
+      date: "YYYY-MM-DD"
+      signature_reference: "SIGN: signature / reference"
+  # --- closure ---
+  closure_status: "open | closed"
+  closure_date: "YYYY-MM-DD"
+
+data_status_controlled_vocabulary:  # authoritative list (§20.4, expanded by Gate 0 reviewer)
+  - no_impact
+  - confirmatory_retained
+  - confirmatory_with_sensitivity
+  - developmental
+  - invalid
+  - replaced_for_technical_failure
+  - campaign_hold
+  - model_version_restart
+
+ledger_rules:
+  - "Replacement never deletes or overwrites the original run; both persist with a documented relationship."
+  - "Undocumented manual rescue is prohibited (§3); every material deviation is reviewed BEFORE further execution."
+  - "Each review is a structured record (role, name, decision, date, signature), never a single free-text signature string."

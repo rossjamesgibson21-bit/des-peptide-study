@@ -1,0 +1,153 @@
+# DES-PEP-CESD-001 — Scope routes & compute/storage ceiling (FROZEN)
+# Phase 0 output (§5, tasks 3–4). Route choice is made at Gate 7 (§12) from
+# BLINDED technical/precision/resource evidence only. The ceiling below is frozen
+# BEFORE any pilot and is replaced for scheduling only by the Gate 4 measured
+# benchmark (§19) — the ceiling itself is not raised without amendment.
+
+protocol_id: DES-PEP-CESD-001
+frozen_at_gate: 0
+
+publication_routes:  # §5 task 3, §12.1
+  - id: ROUTE-A
+    name: "Focused"
+    content: "GGE in three solvents plus targeted DFT"
+    permitted_selection_basis: "Technical feasibility, reproducible pilot sampling and resource ceiling"
+  - id: ROUTE-B
+    name: "Expanded"
+    content: "GGE, CME and YIY in three solvents plus targeted DFT"
+    permitted_selection_basis: "Route A criteria PLUS demonstrated capacity to execute the full balanced panel"
+    # Gate 0 reviewer (item 3, MAJOR): the GGE-qualified enhanced-sampling method
+    # must NOT be inherited automatically by CME and YIY. Each peptide may have
+    # different slow degrees of freedom, useful CVs, basin topology, CV boundaries,
+    # metadynamics stability, reweighting behaviour and convergence times.
+    peptide_specific_qualification_required: true
+    qualification_track:  # mandatory intermediate track before any CME/YIY confirmatory production
+      - step: 1
+        text: "GGE passes the blinded pilot (Phases 6–7 as specified)."
+      - step: 2
+        text: "Gate 7 PROVISIONALLY selects the expanded route on blinded resource/precision evidence only."
+      - step: 3
+        text: "CME and YIY EACH pass their own corrected-build and unbiased-sentinel checks (peptide-specific)."
+      - step: 4
+        text: "Peptide-specific CVs and basin definitions are qualified for CME and YIY while solvent-BLINDED."
+      - step: 5
+        text: "CME and YIY EACH undergo a short replicated enhanced-sampling pilot."
+      - step: 6
+        text: "ONLY peptides that pass their own qualification enter confirmatory production."
+    prohibited: >
+      Inheriting GGE CVs, basin definitions or bias parameters for CME/YIY merely
+      for cross-peptide consistency. Qualification is per peptide.
+  - id: ROUTE-STOP
+    name: "Stop / redesign"
+    content: "No confirmatory solvent paper"
+    permitted_selection_basis: "Model, sampling, reweighting or resource chain cannot meet release criteria"
+
+route_decision_gate: 7
+prohibited_decision_basis:  # §12.1 — hard prohibition
+  - "Which masked arm appears more open"
+  - "Whether an effect is statistically promising"
+  - "Whether the observed ordering resembles the legacy result"
+
+compute_ceiling:  # §5 task 4 — nominal, frozen before any pilot
+  max_ns_per_enhanced_sampling_replica: 400        # §5 task 4; §13.1 400 ns balanced-extension ceiling
+  max_independent_replicas_per_cell: 6             # §5 task 4; §8.1 (4 default, up to 6 by blinded precision rule)
+  min_confirmatory_replicas_per_cell: 4            # §8.1
+  amendment_required_to_exceed: true
+
+aggregate_campaign_ceiling:  # Gate 0 reviewer (item: freeze a TOTAL campaign maximum)
+  # Without a total ceiling, Route B at 6 replicas × 400 ns could expand well
+  # beyond the 10.8 µs planning scenario. These are the whole-campaign maxima; any
+  # single value exceeded requires a signed amendment (deviation DEV + study-lead
+  # + relevant reviewer). Values proposed by the analyst; APPROVED by the study lead
+  # at Gate 0 sign-off (certificate criterion "Scope options and resource ceiling frozen").
+  approval_status: "PROVISIONAL — study lead elected at Gate 0 (2026-07-14) to release with the ceiling PROVISIONAL; the six values below are NOT yet frozen. Freezing the numeric values is a Phase-1 precondition, not a Gate 0 blocker."
+  proposed_by: "analyst agent (values derived from Route B worst case + margin)"
+  freeze_precondition: "Explicit study-lead confirmation of the six numeric values (or amended numbers) is REQUIRED before Phase 1 execution. Tracked as an open item in governance/deviation_log.yaml (DEV-0001)."
+  values:
+    # Route B worst case = 3 peptides × 3 solvents × 6 replicas × 400 ns = 21.6 µs.
+    # Ceiling set at that worst case + a modest allowance for qualification pilots
+    # and re-runs, rounded to a round number.
+    max_aggregate_enhanced_sampling_us: 25.0        # PROVISIONAL; Route B 6-rep/400 ns worst case (21.6 µs) + pilots/margin
+    max_production_cells: 9                          # PROVISIONAL; 3 peptides × 3 solvents (Route B full panel)
+    max_confirmatory_replicas_total: 54             # PROVISIONAL; 9 cells × 6 replicas (precision-rule maximum)
+    max_replacement_runs_total: 12                  # PROVISIONAL; technical-failure replacements before campaign HOLD/amendment
+    max_storage_tb: 8.0                              # PROVISIONAL; sized at the §19.4 2.5× reserve on the 25 µs scenario (refine at Gate 4)
+    max_calendar_weeks_before_amendment: 40         # PROVISIONAL; serial-workstation calendar guardrail before mandatory re-plan
+  exceed_rule: >
+    Exceeding ANY value above requires a signed amendment (deviation record +
+    study-lead approval + relevant reviewer), never a silent extension. The Gate 4
+    measured benchmark may refine storage/calendar for SCHEDULING only; it does
+    not raise these ceilings.
+
+execution_platform:  # decided with study owner (this campaign)
+  # Gate 0 reviewer (item 5): a controlled protocol defines FUNCTIONS, not a named
+  # AI product, and must not grant the analysis agent "release". Vendor-neutral
+  # phrasing below; production hardware is a study-owner arrangement, not a
+  # protocol dependency. (The concrete hardware is recorded in governance/
+  # roles_and_arrangements.yaml as an ARRANGEMENT.)
+  production_md: >
+    User-operated GPU workstation with OpenMM. The §19 throughput budget is
+    written for this class of platform; the Gate 4 benchmark (§9.3) is measured on
+    the actual production hardware. (Current arrangement: M5 Max MacBook Pro, 128 GB.)
+  build_analysis_dft_stats: >
+    Version-controlled computational analysis environment; AI-assisted execution
+    permitted. Functions: system building, static preflight, trajectory/free-energy/
+    DFT/statistical analysis, provenance and manuscript PREPARATION. All outputs
+    require automated verification, independent human review and human gate
+    approval. This environment does NOT approve gates and does NOT perform release.
+  handoff:  # trajectory handoff — item 6
+    inspection_and_publication: >
+      Representative/downsampled trajectories are appropriate for inspection and
+      figures ONLY — they are NOT sufficient evidence for periodic-image integrity
+      or definitive trajectory-level QC.
+    full_trajectory_qc_requirement: >
+      Definitive trajectory-level QC (§8.2 minimum-image / periodic-image
+      integrity) requires EITHER (a) access to ALL saved frames, OR (b) locally
+      generated all-frame audit outputs, QC certificates and SHA-256 hashes tied
+      to the COMPLETE trajectories on the production hardware.
+    always_ingested: "Checkpoints, hills/bias files, run-level summaries, all-frame QC certificates + hashes (§18.2)"
+
+planning_throughput:  # §19.1 — PLANNING ONLY; replaced by Gate 4 measured benchmark
+  ns_per_day_range: [60, 160]
+  ns_per_day_central: [90, 130]
+  operational_overhead_fraction: [0.15, 0.25]
+  note: "Planning estimates NEVER override the measured benchmark (§9.3, §19)."
+
+serial_campaign_scenarios:  # §19.2 — transcribed from protocol for the Gate 0 record
+  - scenario: "GGE 50 ns pilot: 3 replicas × 3 solvents"
+    nominal_us: 0.45
+    raw_serial_days: [3, 8]
+    planning_days_with_overhead: [4, 10]
+  - scenario: "GGE pilot plus one larger-box sensitivity"
+    nominal_us: 0.50
+    raw_serial_days: [3, 9]
+    planning_days_with_overhead: [4, 12]
+  - scenario: "Route A: GGE, 4 replicas × 3 solvents × 200 ns"
+    nominal_us: 2.40
+    raw_serial_days: [15, 40]
+    planning_days_with_overhead: [18, 50]
+  - scenario: "Route A precision increase: 6 replicas"
+    nominal_us: 3.60
+    raw_serial_days: [23, 60]
+    planning_days_with_overhead: [28, 75]
+  - scenario: "Route B: 3 peptides × 3 solvents × 4 replicas × 200 ns"
+    nominal_us: 7.20
+    raw_serial_days: [45, 120]
+    planning_days_with_overhead: [54, 150]
+  - scenario: "Route B precision increase: 6 replicas"
+    nominal_us: 10.80
+    raw_serial_days: [68, 180]
+    planning_days_with_overhead: [82, 225]
+
+dft_allowance:  # §19.3
+  panel_size_complexes: [6, 12]
+  serial_workstation_weeks: [1, 4]
+  note: "Gate 10 quantum benchmark replaces this estimate. DFT scheduled after MD contact panel frozen; may extend calendar if it competes with MD for one machine."
+  engine_decision: "ORCA (§22) is license-gated / not installable in the Claude Science sandbox. Choice deferred to QM manifest freeze (Phase 10, §15.3): run ORCA on user hardware OR use an open engine (Psi4/NWChem/PySCF)."
+
+storage_policy:  # §19.4
+  estimate_at_gate: 4
+  reserve_multiple_of_projected: 2.5
+  qualification_coord_interval_ps: 1
+  coarser_confirmatory_interval_requires: "Signed assessment that geometry and reweighting checks remain adequate"
+  always_preserve: ["hills/bias files", "checkpoints", "run-level datasets"]

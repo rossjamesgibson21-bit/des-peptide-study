@@ -1,0 +1,11 @@
+# DES-PEP-CESD-001 — verification-notebook dependencies (Phase 0)
+# The phase notebooks are pure freeze-verification logic: only two third-party
+# packages, plus Jupyter to open/run them. No simulation/scientific stack needed.
+pandas>=1.5
+pyyaml>=5.4
+jsonschema>=4.0
+# to open & run the notebook:
+jupyterlab
+ipykernel
+# optional: keep the paired .py in sync with the .ipynb
+jupytext

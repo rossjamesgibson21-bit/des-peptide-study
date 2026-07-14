@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "des-pep-cesd-001/scope_and_resource_ceiling",
+  "title": "DES-PEP-CESD-001 scope routes & compute/storage ceiling",
+  "type": "object",
+  "required": ["protocol_id", "frozen_at_gate", "publication_routes",
+               "route_decision_gate", "prohibited_decision_basis",
+               "compute_ceiling", "aggregate_campaign_ceiling", "execution_platform",
+               "planning_throughput", "serial_campaign_scenarios", "dft_allowance",
+               "storage_policy"],
+  "additionalProperties": true,
+  "properties": {
+    "protocol_id": {"const": "DES-PEP-CESD-001"},
+    "frozen_at_gate": {"const": 0},
+    "publication_routes": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "content", "permitted_selection_basis"],
+        "properties": {
+          "id": {"type": "string", "enum": ["ROUTE-A", "ROUTE-B", "ROUTE-STOP"]},
+          "qualification_track": {"type": "array", "minItems": 6,
+            "items": {"type": "object", "required": ["step", "text"]}}
+        },
+        "allOf": [{
+          "if": {"properties": {"id": {"const": "ROUTE-B"}}},
+          "then": {"required": ["peptide_specific_qualification_required",
+                                "qualification_track", "prohibited"],
+                   "properties": {"peptide_specific_qualification_required": {"const": true}}}
+        }]
+      }
+    },
+    "aggregate_campaign_ceiling": {
+      "type": "object",
+      "required": ["approval_status", "values", "exceed_rule"],
+      "properties": {
+        "approval_status": {"type": "string",
+          "description": "ceiling must carry a recorded approval decision: PROVISIONAL before study-lead sign-off, APPROVED after",
+          "pattern": "(?i)provisional|approved"},
+        "values": {
+          "type": "object",
+          "required": ["max_aggregate_enhanced_sampling_us", "max_production_cells",
+                       "max_confirmatory_replicas_total", "max_replacement_runs_total",
+                       "max_storage_tb", "max_calendar_weeks_before_amendment"],
+          "properties": {
+            "max_aggregate_enhanced_sampling_us": {"type": "number", "exclusiveMinimum": 0},
+            "max_production_cells": {"type": "integer", "minimum": 1},
+            "max_confirmatory_replicas_total": {"type": "integer", "minimum": 1}
+          }
+        }
+      }
+    },
+    "route_decision_gate": {"const": 7},
+    "prohibited_decision_basis": {"type": "array", "minItems": 3,
+                                  "items": {"type": "string"}},
+    "compute_ceiling": {
+      "type": "object",
+      "required": ["max_ns_per_enhanced_sampling_replica",
+                   "max_independent_replicas_per_cell",
+                   "min_confirmatory_replicas_per_cell",
+                   "amendment_required_to_exceed"],
+      "properties": {
+        "max_ns_per_enhanced_sampling_replica": {"const": 400},
+        "max_independent_replicas_per_cell": {"const": 6},
+        "min_confirmatory_replicas_per_cell": {"const": 4},
+        "amendment_required_to_exceed": {"const": true}
+      }
+    },
+    "execution_platform": {
+      "type": "object",
+      "required": ["production_md", "build_analysis_dft_stats", "handoff"]
+    },
+    "planning_throughput": {
+      "type": "object",
+      "required": ["ns_per_day_range", "ns_per_day_central",
+                   "operational_overhead_fraction"],
+      "properties": {
+        "ns_per_day_range": {"type": "array", "minItems": 2, "maxItems": 2,
+                             "items": {"type": "number"}},
+        "operational_overhead_fraction": {"type": "array", "minItems": 2, "maxItems": 2,
+                             "items": {"type": "number", "minimum": 0, "maximum": 1}}
+      }
+    },
+    "serial_campaign_scenarios": {"type": "array", "minItems": 1},
+    "dft_allowance": {
+      "type": "object",
+      "required": ["panel_size_complexes", "serial_workstation_weeks",
+                   "engine_decision"]
+    },
+    "storage_policy": {
+      "type": "object",
+      "required": ["estimate_at_gate", "reserve_multiple_of_projected",
+                   "qualification_coord_interval_ps", "always_preserve"],
+      "properties": {
+        "reserve_multiple_of_projected": {"const": 2.5},
+        "qualification_coord_interval_ps": {"const": 1}
+      }
+    }
+  }
+}

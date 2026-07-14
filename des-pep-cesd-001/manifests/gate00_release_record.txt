@@ -1,0 +1,27 @@
+DES-PEP-CESD-001 — Gate 0 release record
+=========================================
+Generated: 2026-07-14T20:05:26Z
+
+Gate:              0 (Phase 0 — protocol, estimand and analysis freeze)
+Overall:           PASS (signed by study lead Ross Gibson, 2026-07-14)
+Annotated tag:     gate-00
+Tag object SHA:    7fec8beed04220223f90f49715312e0e2cb914c8
+Tag target commit: e846d1429a6528ccd2c9dc2c386e9b5c3b5fa315
+HEAD at release:    e846d1429a6528ccd2c9dc2c386e9b5c3b5fa315
+Target == HEAD:    YES
+
+Verification at release:
+  schema validation      7/7 PASS
+  consistency checks      50/50 PASS
+  resource scenarios      6/6 internally valid
+  read-back               20/20 hashes match disk
+
+Open items carried past Gate 0:
+  DEV-0001  aggregate campaign ceiling values PROVISIONAL — freeze the six
+            numeric maxima before Phase 1 (study-lead election at Gate 0).
+  DEV-0002  study lead holds interim data-steward role — a SEPARATE named
+            key-holder must accept custody before Phase 6 (§3, §13.1).
+
+Note: this record is written AFTER tagging and is intentionally NOT part of the
+tagged tree, so the gate-00 target SHA above is immutable and independently
+checkable via:  git rev-list -n 1 gate-00

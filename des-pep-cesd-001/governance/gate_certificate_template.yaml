@@ -1,0 +1,23 @@
+# DES-PEP-CESD-001 — Signed gate certificate template
+# One certificate per gate (§4 failproof rule): the release output of phase n is
+# the required input to phase n+1. A folder/notebook without a signed certificate
+# is NOT an authorised input. Every criterion signed PASS before release; HOLD
+# requires documented CAPA + repeat review; FAIL stops downstream work.
+
+gate_certificate_template:
+  gate_number: "<N>"
+  phase: "<phase name>"
+  protocol_id: DES-PEP-CESD-001
+  evidence_package: "phases/phaseNN_.../outputs/  (+ SHA-256 manifest)"
+  evidence_manifest_sha256: "manifests/gateNN_manifest.sha256"
+  criteria:  # copy the gate's release-matrix rows here
+    - criterion: "<controlled criterion>"
+      required_evidence: "<evidence path>"
+      disposition: "PASS | HOLD | FAIL"
+      reviewer_role: "<role>"
+      reviewer_signature: "SIGN:"
+      date: "YYYY-MM-DD"
+  overall_disposition: "PASS | HOLD | FAIL"
+  git_tag: "gate-NN"                     # tag applied to the repo at release (§18.2)
+  git_commit: "SIGN: commit hash at gate release"
+  notes: ""

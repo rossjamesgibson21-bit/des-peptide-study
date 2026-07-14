@@ -1,0 +1,68 @@
+# DES-PEP-CESD-001 — Blinding control charter (§3, §18.3)
+# Establishes the HARD blinding firewall agreed at Phase 0. The data steward is a
+# real, NAMED human; the analysis agent and any analyst participating in blinded
+# decisions never access the key. Vendor-neutral role language per Gate 0 reviewer.
+
+protocol_id: DES-PEP-CESD-001
+frozen_at_gate: 0
+
+principle:  # §3
+  text: >
+    All solvent labels used for technical pilot review are masked by the data
+    steward; the mapping is inaccessible to analysts making extension or scope
+    decisions.
+
+key_custody:  # §18.3
+  key_artifact: "governance/solvent_code_key.SEALED"
+  owner_role: "Data steward (named human)"
+  custodian_name: "Ross Gibson (Phase 0 interim). FIREWALL DEVIATION DEV-0002: §3 and §13.1 require a SEPARATE key-holder from the Gate 7 scope decision-maker (§13.1: only the data steward may access solvent labels, and outcome estimates stay masked during extension decisions); a distinct named steward must accept the role BEFORE Phase 6 (blinded pilots)."
+  contents: "masked-arm-code -> true-solvent-id mapping (ARM-A/B/C -> SOL-WAT/REL/GLY)"
+  created_before: "Phase 6 (blinded GGE pilot, §11)"
+  # Vendor-neutral (Gate 0 reviewer, item: avoid embedding session/vendor names)
+  NOT_readable_by: ["analysis agent and any analyst participating in blinded decisions", "any reviewer making scope/extension decisions"]
+
+operational_key_procedure:  # Gate 0 reviewer (item 8) — full custody lifecycle
+  mapping_generation: "SIGN: who generates the random ARM->SOL mapping (data steward)"
+  randomness_source: "SIGN: how randomness is generated (e.g. OS CSPRNG / documented seeded draw with witness)"
+  sealing_method: "SIGN: how the mapping is encrypted/sealed (e.g. age/gpg symmetric; algorithm + who holds passphrase)"
+  storage_primary: "SIGN: primary sealed-key location (kept OUT of the analyst-readable tree)"
+  storage_recovery: "SIGN: independent recovery copy location + custodian"
+  access_control: "SIGN: who may access each copy"
+  access_logging: "SIGN: whether access is logged and where the access log lives"
+  accidental_disclosure: "SIGN: how accidental disclosure is handled and contained"
+  breach_declaration: "SIGN: who may declare a blinding breach"
+  breach_consequence: >
+    A declared breach INVALIDATES any scope (Gate 7) or extension decision that
+    could have used the disclosed information; affected decisions are re-made under
+    a documented amendment. (Confirm/adjust at sign-off.)
+  emergency_unblinding: "SIGN: emergency-unblinding rule (who authorises, what is recorded)"
+  post_final_policy: "SIGN: destruction or archival policy for the key AFTER final unblinding"
+
+setup_disclosure_separation:  # Gate 0 reviewer (item: address setup-related disclosure)
+  risk: >
+    Solvent identity may be evident to whoever BUILDS the systems (component
+    counts, parameters). This is acceptable ONLY if the builder takes no part in
+    blinded scope/extension decisions.
+  division:
+    - "UNBLINDED: system builder / data steward"
+    - "BLINDED: technical analyst (analysis agent + human analysts on blinded decisions)"
+    - "BLINDED: statistical / scope reviewer"
+  requirement: "The builder/analyst separation must be explicit and enforced through Phases 6–9."
+
+what_dashboards_may_show:  # §18.3
+  allowed: ["masked arm code", "run ID", "QC metrics"]
+  forbidden: ["filenames revealing solvent", "molecule counts revealing solvent", "directory paths revealing solvent", "effect direction", "biological desirability"]
+
+mechanical_blinding_aids:  # what the analysis environment provides in support of the steward
+  - "Emit only masked-arm labels in all Phase 6–9 analysis outputs"
+  - "Scrub solvent identity from filenames, counts and paths in blinded artifacts"
+  - "Keep the sealed key out of the analyst-readable working tree"
+
+unblinding_event:  # §18.3
+  when: "Once, AFTER Gate 9 dataset lock AND Gate 10 panel freeze"
+  record: "Timestamp + signature (named data steward)"
+  irreversible: "Unblinding occurs exactly once and is logged"
+
+decision_firewall:  # §3, §12.1
+  gate7_route_choice: "Made on blinded technical/precision/resource evidence only"
+  extension_trigger: "Frozen convergence/precision criteria only; balanced across arms; NEVER desired effect size, sign or significance"

@@ -1,0 +1,77 @@
+# DES-PEP-CESD-001 — Controlled roles, authority separation & campaign arrangements
+# Phase 0 governance record (§3.1). Records the two execution arrangements agreed
+# with the study owner and the separated-authority matrix.
+
+protocol_id: DES-PEP-CESD-001
+frozen_at_gate: 0
+
+controlled_roles:  # §3.1 — authority separation (each role "cannot approve alone")
+  - role: "Study lead"
+    name: "Ross Gibson"
+    authority: "Scientific scope, resources and final release"
+    cannot_approve_alone: "Own model or statistical gate"
+  - role: "Molecular-model reviewer"
+    name: "Ross Gibson"   # Phase 0 reviewer-of-record; discipline specialist may be named later by amendment
+    authority: "Chemistry, charge, force field and periodic construction"
+    cannot_approve_alone: "Outcome interpretation"
+  - role: "Enhanced-sampling reviewer"
+    name: "Ross Gibson"   # Phase 0 reviewer-of-record; discipline specialist may be named later by amendment
+    authority: "CVs, bias protocol, convergence and reweighting"
+    cannot_approve_alone: "Statistical claims"
+  - role: "Statistical reviewer"
+    name: "Ross Gibson"   # Phase 0 reviewer-of-record; discipline specialist may be named later by amendment
+    authority: "SAP, multiplicity, equivalence and sensitivity analyses"
+    cannot_approve_alone: "Simulation integrity"
+  - role: "Quantum-chemistry reviewer"
+    name: "Ross Gibson"   # Phase 0 reviewer-of-record; discipline specialist may be named later by amendment
+    authority: "DFT method, fragments, benchmarks and interpretation"
+    cannot_approve_alone: "MD release"
+  - role: "Data steward"
+    name: "Ross Gibson"   # Phase 0 interim; see firewall_deviation below
+    authority: "Blinding, manifests, hashes and release ledger"
+    cannot_approve_alone: "Scientific override"
+    firewall_deviation: >
+      DEV-0002: at Phase 0 the study lead also holds the data-steward role. §3 and
+      §13.1 require the solvent-key holder (data steward) to be a DIFFERENT person from
+      whoever makes the Gate 7 scope/extension decision (§13.1: outcome estimates remain
+      masked during extension decisions, and only the data steward may access solvent
+      labels; §3: the mapping is inaccessible to analysts making extension/scope
+      decisions). A SEPARATE
+      named key-holder MUST be in place and accept the role BEFORE Phase 6 (blinded
+      pilots). Tracked as an open corrective action in governance/deviation_log.yaml.
+
+campaign_arrangements:  # agreed with study owner at Phase 0
+  compute_arrangement:
+    decision: "Production MD/metadynamics runs on the study owner's GPU workstation (current arrangement: M5 Max MacBook Pro). The version-controlled analysis environment performs building, static preflight, all trajectory/free-energy/DFT/statistical analysis, provenance and manuscript PREPARATION; it does NOT run production MD (CPU sandbox, ~1–2 orders of magnitude below the §19 throughput assumption) and does NOT perform release (human gate approval, Gate 0 reviewer item 5)."
+    rationale: "§19 budget was written for the M5 Max platform; Gate 4 benchmark (§9.3) must run on the real production hardware by definition."
+  governance_arrangement:
+    decision: "Reviewer PASS/HOLD/FAIL sign-offs and custody of the solvent-code key are held by REAL HUMAN reviewers/steward. The Claude Science session PREPARES each gate's evidence package and ENFORCES phase sequencing (phase n signed release is the required input to phase n+1); it does NOT sign gates and does NOT hold the solvent key."
+    rationale: "Preserves separated reviewer authority (§3.1) and a HARD blinding firewall (§18.3): the analyst agent never accesses the solvent-code key during Phases 6–9."
+
+release_workflow:  # frozen at Phase 0 — applies to EVERY gate
+  per_phase: >
+    Each phase is a self-contained notebook that loads frozen inputs, performs the
+    phase verification/analysis, and emits a hashed evidence package plus a
+    pre-populated (UNSIGNED) gate certificate.
+  commit_policy: >
+    The session makes a LOCAL git commit of the prepared+verified evidence when
+    the phase notebook passes its consistency checks. The GitHub push and the
+    gate-NN tag are applied ONLY AFTER the human reviewers sign the gate
+    certificate PASS overall. GitHub history therefore contains only signed,
+    gate-passed states.
+  sequencing: >
+    Phase n+1 execution is not authorised until the Gate n certificate is signed
+    PASS overall (§4 failproof rule). The session enforces this.
+
+agent_boundary:  # explicit statement of what the session will and will not do
+  will:
+    - "Author registries, ledgers, manifests, run scripts, QC and analysis notebooks"
+    - "Compute exact charges, periodic-image distances, RDFs, reweighting, convergence, statistics"
+    - "Assemble per-gate evidence packages with SHA-256 manifests"
+    - "Enforce that no downstream phase begins before the upstream gate certificate is signed"
+    - "Apply MECHANICAL blinding aids (masked-arm labels, scrubbed filenames) that support the steward"
+  will_not:
+    - "Sign any gate PASS/HOLD/FAIL (human reviewer authority)"
+    - "Create, hold or read the solvent-code key (data-steward custody)"
+    - "Run production MD in the CPU sandbox"
+    - "Make scope/extension decisions using solvent identity or effect direction (§3, §12.1)"

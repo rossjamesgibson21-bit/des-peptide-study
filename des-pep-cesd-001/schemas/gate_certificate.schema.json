@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "des-pep-cesd-001/gate_certificate",
+  "title": "DES-PEP-CESD-001 gate certificate",
+  "type": "object",
+  "required": ["gate_number", "phase", "protocol_id", "evidence_package",
+               "evidence_manifest_sha256", "criteria", "overall_disposition",
+               "git_tag", "git_commit"],
+  "additionalProperties": true,
+  "properties": {
+    "protocol_id": {"const": "DES-PEP-CESD-001"},
+    "gate_number": {"type": "integer", "minimum": 0, "maximum": 12},
+    "criteria": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["criterion", "required_evidence", "reviewer_role",
+                     "disposition", "reviewer_signature", "date"],
+        "properties": {
+          "disposition": {"type": "string"},
+          "reviewer_signature": {"type": "string"}
+        }
+      }
+    },
+    "overall_disposition": {"type": "string"}
+  },
+  "$comment": "Signed-state validation (all criteria PASS, no residual SIGN:) is enforced at RELEASE time by the release-manifest step, not here — this schema validates STRUCTURE for both unsigned and signed instances."
+}

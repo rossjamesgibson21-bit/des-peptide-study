@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "des-pep-cesd-001/blinding_charter",
+  "title": "DES-PEP-CESD-001 blinding charter",
+  "type": "object",
+  "required": ["protocol_id", "frozen_at_gate", "principle", "key_custody",
+               "operational_key_procedure", "setup_disclosure_separation",
+               "what_dashboards_may_show", "mechanical_blinding_aids",
+               "unblinding_event", "decision_firewall"],
+  "additionalProperties": true,
+  "properties": {
+    "protocol_id": {"const": "DES-PEP-CESD-001"},
+    "frozen_at_gate": {"const": 0},
+    "key_custody": {
+      "type": "object",
+      "required": ["key_artifact", "owner_role", "custodian_name", "contents",
+                   "created_before", "NOT_readable_by"],
+      "properties": {
+        "owner_role": {"type": "string",
+          "description": "data steward holds the key",
+          "pattern": "(?i)steward"},
+        "NOT_readable_by": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    },
+    "operational_key_procedure": {
+      "type": "object",
+      "required": ["mapping_generation", "randomness_source", "sealing_method",
+                   "storage_primary", "storage_recovery", "access_control",
+                   "access_logging", "accidental_disclosure", "breach_declaration",
+                   "breach_consequence", "emergency_unblinding", "post_final_policy"]
+    },
+    "setup_disclosure_separation": {
+      "type": "object",
+      "required": ["risk", "division", "requirement"],
+      "properties": {"division": {"type": "array", "minItems": 3, "items": {"type": "string"}}}
+    },
+    "what_dashboards_may_show": {
+      "type": "object", "required": ["allowed", "forbidden"],
+      "properties": {
+        "allowed": {"type": "array", "items": {"type": "string"}},
+        "forbidden": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    },
+    "mechanical_blinding_aids": {"type": "array", "minItems": 1,
+                                 "items": {"type": "string"}},
+    "unblinding_event": {
+      "type": "object", "required": ["when", "record", "irreversible"],
+      "properties": {"when": {"type": "string",
+        "description": "once, after Gate 9 lock + Gate 10 freeze",
+        "pattern": "(?i)gate 9.*gate 10|gate 10.*gate 9"}}
+    },
+    "decision_firewall": {
+      "type": "object",
+      "required": ["gate7_route_choice", "extension_trigger"]
+    }
+  }
+}

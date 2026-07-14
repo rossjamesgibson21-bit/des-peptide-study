@@ -1,0 +1,150 @@
+# DES-PEP-CESD-001 — Deviation / corrective-action ledger
+# Append-only. One block per deviation, following governance/deviation_log_template.yaml.
+# Undocumented manual rescue is prohibited (§3). Replacement never overwrites the original.
+
+protocol_id: DES-PEP-CESD-001
+
+deviations:
+  - deviation_id: "DEV-0001"
+    protocol_version: "DES-PEP-CESD-001 v1.0"
+    model_version: "n/a (Phase 0 — no model built yet)"
+    phase: "Phase 0"
+    gate: "Gate 0"
+    detected_at: "2026-07-14"
+    detected_by: "Gate 0 reviewer (human review of the freeze evidence package)"
+    description: >
+      First Gate 0 review returned HOLD. Question/estimand registry PASS with
+      clarifications; scope & resource ceiling HOLD (Route B auto-extension of the
+      GGE enhanced-sampling method to CME/YIY unsafe; no aggregate campaign
+      ceiling; vendor-specific agent role granting 'release'; trajectory-handoff
+      QC underspecified); blinding charter HOLD (custodian unnamed; no operational
+      key procedure; setup-disclosure separation implicit); deviation-log template
+      HOLD (insufficient audit detail).
+    detection_method: "Human reviewer disposition on the Gate 0 evidence package"
+    affected:
+      systems: ["n/a"]
+      runs: ["n/a"]
+      segments: ["n/a"]
+      derived_outputs:
+        - "question_estimand_registry.yaml"
+        - "scope_and_resource_ceiling.yaml"
+        - "blinding_charter.yaml"
+        - "deviation_log_template.yaml"
+        - "roles_and_arrangements.yaml"
+        - "schemas/*"
+        - "phase00_freeze notebook + manifest + evidence summary"
+    severity_materiality: "major (methodological: Route B qualification) + minor (auditability/operational-control)"
+    scientific_statistical_impact: >
+      No confirmatory data exist yet, so no results are invalidated. The Route B
+      qualification gap would, if unaddressed, risk applying a GGE-tuned
+      enhanced-sampling method to peptides with different slow degrees of freedom.
+      Corrected before any pilot.
+    immediate_containment_action: "Gate 0 held; no Phase 1 authorisation; no push to shared history."
+    execution_paused: "yes — campaign remains at Gate 0 pending re-review"
+    related_systems_inspected: "yes — all four flagged artifacts + schemas reconciled together"
+    root_cause_assessment: >
+      Phase 0 freeze drafted the estimand at replica level, under-specified Route B
+      cross-peptide qualification, embedded a specific execution platform in a
+      controlled document, and used a minimal deviation template.
+    evidence_paths_and_hashes:
+      - path: "manifests/gate00_manifest.sha256"
+        sha256: "see manifest (regenerated after corrective actions)"
+    corrective_action: >
+      (1) Three-level estimand hierarchy (run observation / cell estimand /
+      contrast estimand). (2) Outcome-class interval logic tightened to
+      whole-simultaneous-interval-vs-margin. (3) Route B peptide-specific
+      qualification track (6 steps) added; GGE parameter inheritance prohibited.
+      (4) Aggregate campaign ceiling added [PROVISIONAL — study-lead sign-off].
+      (5) Release trajectories reclassified as a sensitivity analysis; basin
+      revision conditions strengthened. (6) Execution platform made vendor-neutral;
+      'release' removed from the analysis-environment functions. (7) Full-trajectory
+      QC evidence requirement added. (8) Operational key-custody procedure and
+      builder/analyst separation added to the blinding charter. (9) Deviation
+      template expanded (full provenance, structured per-reviewer reviews,
+      no-overwrite rule, controlled dispositions). Schemas updated; schema 7/7,
+      consistency 50/50, resource 6/6, read-back 20/20 all PASS.
+    preventive_action: >
+      Every controlled artifact now has a JSON Schema enforced by the phase
+      notebook; new required fields (estimand hierarchy, Route B qualification,
+      aggregate ceiling, key procedure) are schema-enforced so the gap cannot
+      silently recur.
+    rerun_replacement_decision: "n/a (documents amended in place under version control; no MD run replaced)"
+    original_run_id: "n/a"
+    replacement_run_id: "n/a"
+    replacement_rule: "Replacement never deletes or overwrites the original run; both remain in the ledger with a documented relationship."
+    confirmatory_status_determination: "developmental (no confirmatory data at Phase 0)"
+    downstream_analyses_requiring_regeneration: ["phase00_freeze evidence package (regenerated)"]
+    data_status: "developmental"
+    reviews:
+      - role: "Study lead"
+        name: "Ross Gibson"
+        decision: "PASS (Gate 0 re-review)"
+        date: "2026-07-14"
+        signature_reference: "gate00_certificate.yaml (overall_disposition: PASS)"
+      - role: "Gate 0 reviewer(s)"
+        name: "Ross Gibson (reviewer-of-record for all four discipline roles, Phase 0)"
+        decision: "PASS (Gate 0 re-review)"
+        date: "2026-07-14"
+        signature_reference: "gate00_certificate.yaml (all four criteria PASS)"
+    closure_status: "open — Gate 0 signed PASS 2026-07-14; roles resolved, but the aggregate-ceiling numeric freeze is deferred to Phase 1 (study-lead election)"
+    closure_date: "SIGN: on explicit confirmation of the six ceiling values"
+    open_items_requiring_human_decision:
+      - "OPEN (deferred to Phase 1): the six aggregate-campaign-ceiling values remain PROVISIONAL. Study lead elected at Gate 0 to release without freezing them; explicit confirmation of the six numbers (or amended numbers) is a Phase-1 precondition. Criterion 3 PASS covers the ceiling STRUCTURE (routes, per-cell cap, aggregate fields), not the specific numeric maxima."
+      - "RESOLVED: data steward + four discipline reviewers named (Ross Gibson, Phase 0 reviewer-of-record). NOTE: the data-steward/study-lead firewall separation is carried forward as DEV-0002 (must close before Phase 6)."
+
+  - deviation_id: "DEV-0002"
+    protocol_version: "DES-PEP-CESD-001 v1.0"
+    model_version: "n/a (Phase 0)"
+    phase: "Phase 0"
+    gate: "Gate 0"
+    detected_at: "2026-07-14"
+    detected_by: "analyst agent (separation-of-duties check at Gate 0 sign-off)"
+    description: >
+      At Phase 0 the study lead (Ross Gibson) also holds the data-steward role and
+      is reviewer-of-record for all four discipline reviews. §3 and §13.1 require the
+      solvent-key holder (data steward) to be a DIFFERENT person from whoever makes
+      the Gate 7 scope/extension decision (study lead): §13.1 states only the data
+      steward may access solvent labels and outcome estimates remain masked during
+      extension decisions; §3 states the mapping is inaccessible to analysts making
+      extension/scope decisions. A single person in both roles cannot satisfy this
+      firewall once blinded pilots run.
+    detection_method: "Role-matrix review against §3/§13.1 at Gate 0 sign-off"
+    affected:
+      systems: ["n/a"]
+      runs: ["n/a"]
+      segments: ["n/a"]
+      derived_outputs: ["governance/roles_and_arrangements.yaml", "governance/blinding_charter.yaml"]
+    severity_materiality: "major (blinding firewall) — but not yet active at Phase 0 (no blinded data exist)"
+    scientific_statistical_impact: >
+      No impact at Phase 0: no solvent-masked data exist and no scope/extension
+      decision has been made. Becomes material at Phase 6 when blinded pilots begin.
+    immediate_containment_action: "Interim assignment recorded explicitly in roles + charter; mandatory close-before-Phase-6 condition set."
+    execution_paused: "no — Phases 1–5 do not involve solvent unblinding"
+    related_systems_inspected: "yes — roles matrix and blinding charter reconciled"
+    root_cause_assessment: "Small team at Phase 0; discipline specialists and an independent steward not yet recruited."
+    evidence_paths_and_hashes:
+      - path: "governance/roles_and_arrangements.yaml"
+        sha256: "see manifest"
+    corrective_action: "Interim roles recorded; DEV-0002 opened to track recruitment of a separate named data steward."
+    preventive_action: >
+      A SEPARATE named data steward (not the study lead / Gate 7 decision-maker)
+      MUST accept the key-custody role and be recorded in roles_and_arrangements.yaml
+      and blinding_charter.yaml BEFORE Phase 6 begins. Phase 6 authorisation is
+      conditional on DEV-0002 closure.
+    rerun_replacement_decision: "n/a"
+    original_run_id: "n/a"
+    replacement_run_id: "n/a"
+    replacement_rule: "n/a"
+    confirmatory_status_determination: "no_impact"
+    downstream_analyses_requiring_regeneration: []
+    data_status: "no_impact"
+    reviews:
+      - role: "Study lead"
+        name: "Ross Gibson"
+        decision: "ACKNOWLEDGE (accepts interim dual role + close-before-Phase-6 condition)"
+        date: "2026-07-14"
+        signature_reference: "chat decision 2026-07-14"
+    closure_status: "open — MUST close before Phase 6 (blinded pilots)"
+    closure_date: "SIGN: on appointment of a separate named data steward"
+    open_items_requiring_human_decision:
+      - "Appoint and record a SEPARATE named data steward (distinct from the study lead) before Phase 6."
